@@ -515,7 +515,7 @@ body.no-scroll {
   font-size: 18px;
   margin-bottom: 1px;
   font-weight: 600;
-  color: #e8f4fd;
+  color: #080909;
 }
 .education-item .institution {
   font-size: 15px;
@@ -545,7 +545,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: #e5f0fb;
+  color: #000306;
   gap: 8px;
 }
 .interests-list i {
