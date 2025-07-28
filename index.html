@@ -3,107 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anirudh Raghavan</title>
+  <title>Anirudh Raghavan - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Mobile Hamburger Button -->
-  <button class="hamburger-btn" id="hamburger-btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <!-- Top Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <h1>Anirudh Raghavan</h1>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
-  <!-- Mobile Overlay -->
+  <!-- Mobile Menu Overlay -->
   <div class="mobile-overlay" id="mobile-overlay"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <h1>Anirudh Raghavan</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="publications.html">Publications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </aside>
-
-  <main class="main-section">
-    <section class="intro-section">
-      <div class="image-container">
-        <img src="Images/Display img.png" alt="Anirudh Raghavan" />
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="intro-container">
+        <div class="image-container">
+          <img src="Images/Display img.png" alt="Anirudh Raghavan" />
+        </div>
+        <div class="text-container">
+          <h2>ANIRUDH RAGHAVAN</h2>
+          <h3>A Bit About Me</h3>
+          <p>
+            Welcome! I'm Anirudh Raghavan, a graduate student pursuing a Master's degree in Autonomy at Purdue University. My core interest lies in enabling intelligent robotic systems through machine perception, with a focus on Robot Vision and AI. With a strong foundation in Electronics and Communication Engineering from Vellore Institute of Technology, I'm dedicated to developing systems that can perceive, adapt, and respond to dynamic real-world environments. Explore my portfolio to see how I'm bringing these ideas to life.
+          </p>
+        </div>
       </div>
-      <div class="text-container">
-        <h2>ANIRUDH RAGHAVAN</h2>
-        <h3>A Bit About Me</h3>
-        <p>
-          Welcome! I'm Anirudh Raghavan, a graduate student pursuing a Master's degree in Autonomy at Purdue University. My core interest lies in enabling intelligent robotic systems through machine perception, with a focus on Robot Vision and AI. With a strong foundation in Electronics and Communication Engineering from Vellore Institute of Technology, I'm dedicated to developing systems that can perceive, adapt, and respond to dynamic real-world environments. Explore my portfolio to see how I'm bringing these ideas to life.
-        </p>
+      
+      <div class="home-buttons">
+        <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/yourprofile" class="linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/yourgithub" class="github" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="buttons">
-      <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">
-        <i class="fas fa-download"></i> Download Resume
-      </a>
-      <div class="social-icons">
-        <a href="https://linkedin.com/in/yourprofile" class="linkedin" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/yourgithub" class="github" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p>Get to know more about my journey, education, and aspirations</p>
+      </div>
+      <div class="about-content">
+        <!-- Content will be added later -->
+        <p>About me content will be added here...</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="section-header">
+        <h2>Skills & Expertise</h2>
+        <p>Technical proficiencies and tools I work with</p>
+      </div>
+      <div class="skills-content">
+        <!-- Content will be added later -->
+        <p>Skills content will be added here...</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>Explore my work in robotics, AI, and autonomous systems</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" onclick="window.location.href='project1.html'">
+          <div class="project-image">
+            <img src="Images/project1.jpg" alt="Project 1" />
+            <div class="project-overlay">
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Autonomous Navigation System</h3>
+            <p>Advanced robot navigation using computer vision and machine learning</p>
+            <div class="project-tags">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">ROS</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" onclick="window.location.href='project2.html'">
+          <div class="project-image">
+            <img src="Images/project2.jpg" alt="Project 2" />
+            <div class="project-overlay">
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Smart Surveillance System</h3>
+            <p>AI-powered surveillance with real-time object detection and tracking</p>
+            <div class="project-tags">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">TensorFlow</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" onclick="window.location.href='project3.html'">
+          <div class="project-image">
+            <img src="Images/project3.jpg" alt="Project 3" />
+            <div class="project-overlay">
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Robotic Arm Control</h3>
+            <p>Precision control system for industrial robotic applications</p>
+            <div class="project-tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Control Systems</span>
+              <span class="tag">MATLAB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications-section">
+      <div class="section-header">
+        <h2>Certifications</h2>
+        <p>Professional certifications and achievements</p>
+      </div>
+      <div class="certifications-content">
+        <!-- Content will be added later -->
+        <p>Certifications content will be added here...</p>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications-section">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <p>Research papers and academic contributions</p>
+      </div>
+      <div class="publications-content">
+        <!-- Content will be added later -->
+        <p>Publications content will be added here...</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Let's connect and discuss opportunities in robotics, AI, and autonomous systems</p>
+      </div>
+      <div class="contact-content">
+        <!-- Content will be added later -->
+        <p>Contact form and information will be added here...</p>
       </div>
     </section>
   </main>
 
   <script>
-    // Hamburger menu functionality
+    // Navigation functionality
+    const navbar = document.getElementById('navbar');
     const hamburgerBtn = document.getElementById('hamburger-btn');
-    const sidebar = document.getElementById('sidebar');
+    const navMenu = document.getElementById('nav-menu');
     const overlay = document.getElementById('mobile-overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
     const body = document.body;
 
-    function toggleSidebar() {
-      sidebar.classList.toggle('sidebar-open');
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      navMenu.classList.toggle('nav-menu-open');
       hamburgerBtn.classList.toggle('hamburger-active');
       overlay.classList.toggle('overlay-active');
       body.classList.toggle('no-scroll');
     }
 
-    function closeSidebar() {
-      sidebar.classList.remove('sidebar-open');
+    function closeMobileMenu() {
+      navMenu.classList.remove('nav-menu-open');
       hamburgerBtn.classList.remove('hamburger-active');
       overlay.classList.remove('overlay-active');
       body.classList.remove('no-scroll');
     }
 
-    hamburgerBtn.addEventListener('click', toggleSidebar);
-    overlay.addEventListener('click', closeSidebar);
+    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
 
-    // Navigation for multi-page website
-    document.querySelectorAll('.sidebar nav a').forEach(link => {
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Close sidebar on mobile when link is clicked
-        if (window.innerWidth <= 768) {
-          closeSidebar();
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          const navbarHeight = navbar.offsetHeight;
+          const targetPosition = targetSection.offsetTop - navbarHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
         }
         
-        // Let the browser handle the navigation naturally
-        // No need to prevent default for actual page navigation
+        // Close mobile menu if open
+        closeMobileMenu();
+        
+        // Update active link
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
       });
     });
 
-    // Close sidebar when window is resized to desktop size
+    // Update active navigation on scroll
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY + navbar.offsetHeight + 50;
+      
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    });
+
+    // Close mobile menu when window is resized to desktop size
     window.addEventListener('resize', function() {
       if (window.innerWidth > 768) {
-        closeSidebar();
+        closeMobileMenu();
       }
     });
 
