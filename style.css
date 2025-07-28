@@ -435,3 +435,217 @@ body.no-scroll {
 .buttons {
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
+
+/* ========== About Page CSS ========== */
+.page-header {
+  margin-bottom: 35px;
+  text-align: left;
+  animation: fadeInUp 0.7s;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #4a90e2;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: #cfdaf7;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.content-section {
+  margin-bottom: 45px;
+}
+
+/* --- About Grid Layout --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 32px;
+  animation: fadeInUp 0.7s 0.12s both;
+}
+
+/* --- About Cards --- */
+.about-card {
+  background: linear-gradient(131deg, #22243b 60%, #353678 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 32px rgba(31,49,137,0.11);
+  padding: 38px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  min-height: 320px;
+  gap: 13px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 20px 48px rgba(31, 49, 137, 0.26);
+}
+
+.about-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#4a90e2,#7b68ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-icon {
+  font-size: 36px;
+  color: #7b68ee;
+  margin-bottom: 5px;
+}
+
+/* --- Education items inside card --- */
+.education-item {
+  margin-bottom: 16px;
+}
+.education-item:last-child { margin-bottom: 0; }
+.education-item h4 {
+  font-size: 18px;
+  margin-bottom: 1px;
+  font-weight: 600;
+  color: #e8f4fd;
+}
+.education-item .institution {
+  font-size: 15px;
+  color: #b8cef8;
+  margin-bottom: 0;
+}
+.education-item .year {
+  font-size: 14px;
+  color: #90a8e6;
+}
+.education-item .description {
+  font-size: 15px;
+  color: #d3e2ff;
+  margin-top: 2px;
+}
+
+/* --- Interests List --- */
+.interests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap:wrap;
+  gap: 10px 26px;
+}
+.interests-list li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #e5f0fb;
+  gap: 8px;
+}
+.interests-list i {
+  color: #7b68ee;
+  font-size: 19px;
+}
+
+/* --- Philosophy Points --- */
+.philosophy-points {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.philosophy-points .point {
+  display: flex;
+  align-items: center;
+  font-size: 15.5px;
+  gap: 7px;
+  color: #dbe6fa;
+}
+.philosophy-points .point i {
+  color: #00d2d3;
+  font-size: 17px;
+}
+
+/* ========== Timeline Section ========== */
+.timeline-section {
+  margin: 60px 0 0 0;
+}
+
+.timeline-section h2 {
+  color: #728fff;
+  font-size: 28px;
+  font-weight: 750;
+  margin-bottom: 22px;
+  letter-spacing: 1px;
+}
+
+/* --- Timeline --- */
+.timeline {
+  border-left: 3px solid #4a90e2;
+  margin-left: 8px;
+  padding-left: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 730px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 8px;
+  animation: fadeInUp 0.7s;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; top: 6px;
+  width: 18px; height: 18px;
+  background: linear-gradient(135deg,#4a90e2,#7b68ee);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(74, 144, 226, 0.23);
+}
+
+.timeline-date {
+  color: #6cbeed;
+  font-weight: bold;
+  font-size: 15.5px;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: #e5f0ff;
+}
+.timeline-content p {
+  font-size: 16px;
+  color: #d3e2ff;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .timeline { max-width: 100%; }
+}
+@media (max-width: 680px) {
+  .content-section { padding: 0; }
+  .about-card { padding: 24px 13px 18px; }
+  .timeline-section { margin-top: 38px; }
+  .timeline { padding-left: 9px; }
+}
+
+/* Optionally, make card hovers subtler on touch devices */
+@media (hover: none) {
+  .about-card:hover { transform: none; box-shadow: none; }
+}
