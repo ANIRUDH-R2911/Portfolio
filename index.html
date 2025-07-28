@@ -8,26 +8,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-
+  <!-- Mobile Hamburger Button -->
   <button class="hamburger-btn" id="hamburger-btn">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-
+  <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobile-overlay"></div>
 
   <aside class="sidebar" id="sidebar">
     <h1>Anirudh Raghavan</h1>
     <nav>
-      <a href="#Home" class="active">Home</a>
-      <a href="#About">About Me</a>
-      <a href="#Projects">Projects</a>
-      <a href="#Skills">Skills</a>
-      <a href="#Certifications">Certifications</a>
-      <a href="#Publications">Publications</a>
-      <a href="#Contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="publications.html">Publications</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </aside>
 
@@ -50,10 +50,10 @@
         <i class="fas fa-download"></i> Download Resume
       </a>
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/anirudh-raghavan-232b69266/" class="linkedin" title="LinkedIn">
+        <a href="https://linkedin.com/in/yourprofile" class="linkedin" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/ANIRUDH-R2911" class="github" title="GitHub">
+        <a href="https://github.com/yourgithub" class="github" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
         <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Email">
@@ -64,7 +64,7 @@
   </main>
 
   <script>
-    
+    // Hamburger menu functionality
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('mobile-overlay');
@@ -87,29 +87,27 @@
     hamburgerBtn.addEventListener('click', toggleSidebar);
     overlay.addEventListener('click', closeSidebar);
 
-  
+    // Navigation for multi-page website
     document.querySelectorAll('.sidebar nav a').forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        document.querySelectorAll('.sidebar nav a').forEach(l => l.classList.remove('active'));
-        
-        this.classList.add('active');
-      
+        // Close sidebar on mobile when link is clicked
         if (window.innerWidth <= 768) {
           closeSidebar();
         }
-
+        
+        // Let the browser handle the navigation naturally
+        // No need to prevent default for actual page navigation
       });
     });
 
+    // Close sidebar when window is resized to desktop size
     window.addEventListener('resize', function() {
       if (window.innerWidth > 768) {
         closeSidebar();
       }
     });
 
-    
+    // Add loading effect
     window.addEventListener('load', function() {
       document.body.style.opacity = '0';
       setTimeout(() => {
