@@ -8,45 +8,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-
-  
   <aside class="sidebar">
     <h1>Anirudh Raghavan</h1>
     <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
+      <a href="#Home" class="active">Home</a>
+      <a href="#About">About Me</a>
+      <a href="#Projects">Projects</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Certifications">Certifications</a>
+      <a href="#Publications">Publications</a>
+      <a href="#Contact">Contact</a>
     </nav>
   </aside>
 
-  
   <main class="main-section">
     <section class="intro-section">
       <div class="image-container">
-        <img src="Images\Display img.png" alt="Anirudh Raghavan" />
+        <img src="Images/Display img.png" alt="Anirudh Raghavan" />
       </div>
       <div class="text-container">
         <h2>ANIRUDH RAGHAVAN</h2>
         <h3>A Bit About Me</h3>
         <p>
-          Welcome! I'm Anirudh Raghavan, a graduate student pursuing a Master's degree in Autonomy at Purdue University. My core interest lies in enabling intelligent robotic systems through machine perception, with a focus on Robot Vision and AI. With a strong foundation in Electronics and Communication Engineering from Vellore Institute of Technology, I’m dedicated to developing systems that can perceive, adapt, and respond to dynamic real-world environments. Explore my portfolio to see how I’m bringing these ideas to life.
+          Welcome! I'm Anirudh Raghavan, a graduate student pursuing a Master's degree in Autonomy at Purdue University. My core interest lies in enabling intelligent robotic systems through machine perception, with a focus on Robot Vision and AI. With a strong foundation in Electronics and Communication Engineering from Vellore Institute of Technology, I'm dedicated to developing systems that can perceive, adapt, and respond to dynamic real-world environments. Explore my portfolio to see how I'm bringing these ideas to life.
         </p>
       </div>
     </section>
 
     <section class="buttons">
-      <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">Resume</a>
+      <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
       <div class="social-icons">
-        <a href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yourgithub"><i class="fab fa-github"></i></a>
-        <a href="mailto:anirudhraghavan2002@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/anirudh-raghavan-232b69266/" class="linkedin" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/ANIRUDH-R2911" class="github" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
     </section>
   </main>
 
+  <script>
+    document.querySelectorAll('.sidebar nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelectorAll('.sidebar nav a').forEach(l => l.classList.remove('active'));
+        
+        this.classList.add('active');
+      });
+    });
+
+    window.addEventListener('load', function() {
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease-in-out';
+        document.body.style.opacity = '1';
+      }, 100);
+    });
+  </script>
 </body>
 </html>
