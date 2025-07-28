@@ -8,7 +8,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <aside class="sidebar">
+
+  <button class="hamburger-btn" id="hamburger-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
     <h1>Anirudh Raghavan</h1>
     <nav>
       <a href="#Home" class="active">Home</a>
@@ -54,6 +64,30 @@
   </main>
 
   <script>
+    
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    const body = document.body;
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('sidebar-open');
+      hamburgerBtn.classList.toggle('hamburger-active');
+      overlay.classList.toggle('overlay-active');
+      body.classList.toggle('no-scroll');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('sidebar-open');
+      hamburgerBtn.classList.remove('hamburger-active');
+      overlay.classList.remove('overlay-active');
+      body.classList.remove('no-scroll');
+    }
+
+    hamburgerBtn.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+  
     document.querySelectorAll('.sidebar nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -61,9 +95,21 @@
         document.querySelectorAll('.sidebar nav a').forEach(l => l.classList.remove('active'));
         
         this.classList.add('active');
+      
+        if (window.innerWidth <= 768) {
+          closeSidebar();
+        }
+
       });
     });
 
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeSidebar();
+      }
+    });
+
+    
     window.addEventListener('load', function() {
       document.body.style.opacity = '0';
       setTimeout(() => {

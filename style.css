@@ -12,6 +12,73 @@ body {
   line-height: 1.6;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
+
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  border: none;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.hamburger-active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-btn.hamburger-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.hamburger-active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-overlay.overlay-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .sidebar {
   background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   color: white;
@@ -79,14 +146,13 @@ body {
   box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
-/* Main Section */
+
 .main-section {
   margin-left: 280px;
   padding: 40px;
   flex: 1;
   min-height: 100vh;
 }
-
 
 .intro-section {
   background: linear-gradient(135deg, #1f3189 0%, #2d4db8 50%, #4a90e2 100%);
@@ -164,7 +230,6 @@ body {
   color: #f0f8ff;
   text-align: justify;
 }
-
 
 .buttons {
   text-align: center;
@@ -253,7 +318,7 @@ body {
   color: white;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .intro-section {
     flex-direction: column;
@@ -273,32 +338,55 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .mobile-overlay {
+    display: block;
+  }
+
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 20px;
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    left: -280px;
+    top: 0;
+    padding: 80px 25px 30px;
+    transition: left 0.3s ease;
+    z-index: 1600;
+  }
+
+  .sidebar.sidebar-open {
+    left: 0;
   }
 
   .sidebar nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-start;
   }
 
   .sidebar nav a {
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 12px 15px;
+    font-size: 16px;
   }
 
   .main-section {
     margin-left: 0;
-    padding: 20px;
+    padding: 80px 20px 20px;
+    width: 100%;
   }
 
   .intro-section {
     padding: 30px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container {
+    margin-left: 0;
+    margin-top: 30px;
   }
 
   .text-container h2 {
@@ -323,8 +411,11 @@ body {
     height: 50px;
     font-size: 24px;
   }
-}
 
+  .buttons {
+    margin-top: 30px;
+  }
+}
 
 @keyframes fadeInUp {
   from {
