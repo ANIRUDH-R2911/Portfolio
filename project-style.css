@@ -1,0 +1,251 @@
+
+/* Project Header Specific Styles */
+.project-header {
+  background: linear-gradient(135deg, #1f3189 0%, #2d4db8 50%, #4a90e2 100%);
+  color: white;
+  padding: 80px 20px 60px;
+  text-align: center;
+  margin-top: -70px;
+  padding-top: 140px;
+}
+
+.project-title {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-title h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.project-subtitle {
+  font-size: 20px;
+  color: #e8f4fd;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Project Content Container */
+.project-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Image Gallery */
+.image-gallery {
+  margin-bottom: 60px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.project-image {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.project-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image:hover .image-caption {
+  opacity: 1;
+}
+
+/* Content Sections */
+.content-section {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.content-section h2 {
+  color: #233697;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #4a90e2;
+  padding-bottom: 10px;
+}
+
+.content-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #666;
+}
+
+.content-section ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.content-section li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 60px 0 40px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  justify-content: center;
+}
+
+.github-btn {
+  background: linear-gradient(135deg, #333, #555);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.github-btn:hover {
+  background: linear-gradient(135deg, #555, #777);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #1f3189, #4a90e2);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+/* Responsive Design for Project Pages */
+@media (max-width: 768px) {
+  .project-header {
+    padding-top: 120px;
+  }
+
+  .project-title h1 {
+    font-size: 36px;
+  }
+
+  .project-subtitle {
+    font-size: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-image img {
+    height: 250px;
+  }
+
+  .content-section {
+    padding: 25px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-btn {
+    min-width: 200px;
+  }
+
+  .project-content {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header {
+    padding: 60px 15px 40px;
+    padding-top: 100px;
+  }
+
+  .project-title h1 {
+    font-size: 28px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+}
