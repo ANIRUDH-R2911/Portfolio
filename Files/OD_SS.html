@@ -11,19 +11,16 @@
 </head>
 
 <body>
-  <!-- Navigation Banner -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
         <h1>Anirudh Raghavan</h1>
       </div>
       
-      <!-- Desktop Back Button -->
       <a href="../index.html#projects" class="back-to-projects">
         <i class="fas fa-arrow-left"></i> Back to Portfolio
       </a>
 
-      <!-- Mobile Hamburger Button -->
       <button class="project-hamburger-btn" id="project-hamburger-btn">
         <span></span>
         <span></span>
@@ -31,7 +28,6 @@
       </button>
     </div>
 
-    <!-- Mobile Navigation Menu -->
     <div class="project-nav-menu" id="project-nav-menu">
       <a href="../index.html#home"> Home
       </a>
@@ -50,84 +46,102 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay -->
   <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
 
-  <!-- Main Content -->
   <main class="main-content">
-    <!-- Project Header -->
     <section class="project-header">
       <div class="project-title">
-        <h1>EXPLORING OBJECT DETECTION AND SEMANTIC SEGMENTATION</h1>
+        <h1>Exploring OBJECT DETECTION AND SEMANTIC SEGMENTATION ON ROAD SCENE DATASET</h1>
       </div>
     </section>
 
-    <!-- Project Content -->
     <div class="project-content">
-      <!-- Image Gallery -->
       <section class="image-gallery">
         <div class="gallery-grid">
           <div class="project-image">
-            <img src="../Images/OD_SS_1.jpg" alt="Object Detection Results" />
+            <img src="../Images/OD_SS_1.jpg" alt="Result-1" />
           </div>
           <div class="project-image">
-            <img src="../Images/OD_SS_2.jpg" alt="Semantic Segmentation" />
+            <img src="../Images/OD_SS_2.jpg" alt="Result-2" />
           </div>
         </div>
       </section>
 
-      <!-- Project Overview -->
       <section class="content-section">
         <h2>Project Overview</h2>
         <p>
-          This project explores advanced computer vision techniques for autonomous driving applications, focusing on object detection and semantic segmentation of road scenes. The work involves implementing and comparing different neural network architectures to understand their effectiveness in real-world driving scenarios.
-        </p>
-        <p>
-          The project addresses critical challenges in autonomous vehicle perception, including accurate detection of vehicles, pedestrians, traffic signs, and road infrastructure while providing pixel-level understanding of the driving environment through semantic segmentation.
+          Explored deep learning techniques for road scene understanding in the context of autonomous driving. Focused on using YOLOv8 for real-time object detection and U-Net for semantic segmentation. The project aimed to compare and evaluate both approaches on a custom dataset derived from the Waymo Open Dataset to understand their effectiveness in structured road environments
         </p>
         
         <div class="tech-stack">
-          <span class="tech-tag">Computer Vision</span>
-          <span class="tech-tag">Deep Learning</span>
-          <span class="tech-tag">YOLO</span>
+          <span class="tech-tag">YOLOv8</span>
           <span class="tech-tag">U-Net</span>
           <span class="tech-tag">Python</span>
+          <span class="tech-tag">Roboflow</span>
           <span class="tech-tag">OpenCV</span>
-          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">PyTorch</span>
         </div>
       </section>
 
-      <!-- Technical Implementation -->
       <section class="content-section">
         <h2>Technical Implementation</h2>
         <p>
-          The implementation involved developing and training two complementary computer vision models:
+          <strong>Dataset Creation:</strong>
         </p>
         <ul>
-          <li><strong>Object Detection:</strong> Implemented YOLO (You Only Look Once) architecture for real-time detection of vehicles, pedestrians, and traffic infrastructure</li>
-          <li><strong>Semantic Segmentation:</strong> Developed U-Net based model for pixel-level classification of road scenes, enabling detailed understanding of drivable areas, sidewalks, and road markings</li>
-          <li><strong>Data Processing:</strong> Extensive preprocessing and augmentation of road scene datasets to improve model robustness</li>
-          <li><strong>Performance Optimization:</strong> Model optimization techniques to achieve real-time inference speeds suitable for autonomous driving applications</li>
+          <li> Built a custom dataset using Roboflow, annotated with five semantic classes: vehicles, pedestrians, road, traffic signals, and background </li>
+          <li> Extracted and curated samples under varied lighting and occlusion conditions from the Waymo Open Dataset </li>
+        </ul> <br>
+
+        <p>
+          <strong>YOLOv8 – Object Detection:</strong>
+        </p>
+        <ul>
+          <li> Trained a YOLOv8 model to detect and localize vehicles, pedestrians, and traffic signals </li>
+          <li> Fine-tuned hyperparameters for robustness across different scenes and weather conditions </li>
+        </ul><br>
+
+        <p>
+          <strong>U-Net – Semantic Segmentation:</strong>
+        </p>
+        <ul>
+          <li> Implemented a U-Net architecture in PyTorch for dense pixel-wise classification of road scenes </li>
+          <li> Applied data augmentation and class balancing to improve performance on minority classes like pedestrians and traffic lights </li>
         </ul>
       </section>
 
-      <!-- Results and Impact -->
       <section class="content-section">
         <h2>Results and Impact</h2>
         <p>
-          The project successfully demonstrated the effectiveness of combining object detection and semantic segmentation for comprehensive scene understanding in autonomous driving contexts. Key achievements include:
+          <strong>YOLOv8 (Object Detection):</strong>
         </p>
         <ul>
-          <li>Achieved high accuracy in multi-class object detection with real-time inference capabilities</li>
-          <li>Developed robust semantic segmentation model capable of pixel-level scene understanding</li>
-          <li>Created comprehensive evaluation framework comparing different architectural approaches</li>
-          <li>Contributed to understanding of computer vision applications in autonomous vehicle perception systems</li>
+          <li> <strong>mAP@0.5:</strong> 82.3% </li>
+          <li> <strong>Precision:</strong> 85.1% </li>
+          <li> <strong>Recall:</strong> 78.7% </li>
+          <li> Demonstrated strong performance on vehicles and signals; slightly lower recall on small or occluded pedestrians </li>
+        </ul> <br>
+
+        <p>
+          <strong>U-Net (Semantic Segmentation):</strong>
+        </p>
+        <ul>
+          <li> <strong>Mean IoU:</strong> 76.4% </li>
+          <li> <strong>Pixel Accuracy:</strong> 88.9% </li>
+          <li> Accurately segmented roads and vehicles; some confusion between pedestrians and background in dense scenes </li>
+        </ul><br>
+
+        <p>
+          <strong>Provided valuable comparative insights:</strong>
+        </p>
+        <ul>
+          <li> YOLOv8 excels at precise object localization and real-time use cases. </li>
+          <li> U-Net offers granular scene understanding valuable for path planning and contextual reasoning in autonomous systems. </li>
         </ul>
       </section>
 
-      <!-- Action Buttons -->
       <div class="action-buttons">
-        <a href="https://github.com/ANIRUDH-R2911" target="_blank" class="action-btn github-btn">
+        <a href="https://github.com/ANIRUDH-R2911/roadscene-vision-exploration" target="_blank" class="action-btn github-btn">
           <i class="fab fa-github"></i>
           View on GitHub
         </a>
@@ -140,7 +154,6 @@
   </main>
 
   <script>
-    // Mobile navigation functionality
     const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
     const projectNavMenu = document.getElementById('project-nav-menu');
     const projectOverlay = document.getElementById('project-mobile-overlay');
@@ -160,7 +173,6 @@
       body.classList.remove('no-scroll');
     }
 
-    // Event listeners
     if (projectHamburgerBtn) {
       projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
     }
@@ -169,19 +181,16 @@
       projectOverlay.addEventListener('click', closeProjectMobileMenu);
     }
 
-    // Close menu when clicking nav links
     document.querySelectorAll('.project-nav-menu a').forEach(link => {
       link.addEventListener('click', closeProjectMobileMenu);
     });
 
-    // Close menu on window resize
     window.addEventListener('resize', function () {
       if (window.innerWidth > 768) {
         closeProjectMobileMenu();
       }
     });
 
-    // Smooth loading animation
     window.addEventListener('load', function () {
       document.body.style.opacity = '0';
       setTimeout(() => {
@@ -190,7 +199,6 @@
       }, 100);
     });
 
-    // Image lazy loading and error handling
     document.querySelectorAll('.project-image img').forEach(img => {
       img.addEventListener('error', function() {
         this.style.display = 'none';
