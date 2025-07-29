@@ -427,6 +427,7 @@ body.no-scroll {
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
+  color:white
 }
 
 .certificate-card:hover {
@@ -435,7 +436,7 @@ body.no-scroll {
 }
 
 .certificate-card h3 {
-  color: #2138e7;
+  color: #f6f6f7;
   font-size: 20px;
   font-weight: 600;
   margin: 0;
