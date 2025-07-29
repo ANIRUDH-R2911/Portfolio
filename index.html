@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Top Navigation Bar -->
+
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-brand">
@@ -24,7 +24,7 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       
-      <!-- Mobile Hamburger Button -->
+      
       <button class="hamburger-btn" id="hamburger-btn">
         <span></span>
         <span></span>
@@ -33,12 +33,9 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
   <div class="mobile-overlay" id="mobile-overlay"></div>
 
-  <!-- Main Content -->
   <main class="main-content">
-    <!-- Home Section -->
     <section id="home" class="section home-section">
       <div class="intro-container">
         <div class="image-container">
@@ -71,7 +68,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="section-header">
         <h2>About Me</h2>
@@ -79,7 +75,7 @@
       <div class="about-content">
         <p>In 2024, I transitioned from the vibrant city of Chennai to West Lafayette to pursue a Master’s in Autonomy at Purdue University. This journey marked my first experience living independently and has been a transformative year of technical growth, hands-on learning, and personal development.</p><br>
         <p>At Purdue, over the past year, I’ve engaged deeply with robotics and intelligent systems through a blend of theoretical study and applied projects. My recent work includes:</p><br>
-        <ul style="list-style-type: circle;">
+        <ul style="list-style-type: circle; gap: 40px">
           <li>Developing a semantic segmentation model using U-Net to classify urban driving scenes, enabling contextual understanding of vehicles, pedestrians, and traffic signals for autonomous systems</li>
           <li>Enhancing object detection robustness in adverse weather conditions by integrating environment-adaptive preprocessing into YOLOv8</li>
           <li>Designing a real-time hand gesture recognition system for robotic arm control using MediaPipe and STM32</li>
@@ -91,7 +87,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="section skills-section">
       <div class="section-header">
         <h2>Skills & Expertise</h2>
@@ -182,7 +177,6 @@
       </div>
     </section>
 
-    <!-- Publications Section -->
     <section id="publications" class="section publications-section">
       <div class="section-header">
         <h2>Publications</h2>
@@ -210,7 +204,7 @@
   </main>
 
   <script>
-    // Navigation functionality
+
     const navbar = document.getElementById('navbar');
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navMenu = document.getElementById('nav-menu');
@@ -218,7 +212,7 @@
     const navLinks = document.querySelectorAll('.nav-link');
     const body = document.body;
 
-    // Mobile menu toggle
+
     function toggleMobileMenu() {
       navMenu.classList.toggle('nav-menu-open');
       hamburgerBtn.classList.toggle('hamburger-active');
@@ -236,7 +230,6 @@
     hamburgerBtn.addEventListener('click', toggleMobileMenu);
     overlay.addEventListener('click', closeMobileMenu);
 
-    // Smooth scrolling for navigation links
     navLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -254,16 +247,13 @@
           });
         }
         
-        // Close mobile menu if open
         closeMobileMenu();
         
-        // Update active link
         navLinks.forEach(l => l.classList.remove('active'));
         this.classList.add('active');
       });
     });
 
-    // Update active navigation on scroll
     window.addEventListener('scroll', function() {
       const scrollPosition = window.scrollY + navbar.offsetHeight + 50;
       
@@ -281,14 +271,13 @@
       });
     });
 
-    // Close mobile menu when window is resized to desktop size
     window.addEventListener('resize', function() {
       if (window.innerWidth > 768) {
         closeMobileMenu();
       }
     });
 
-    // Add loading effect
+
     window.addEventListener('load', function() {
       document.body.style.opacity = '0';
       setTimeout(() => {
