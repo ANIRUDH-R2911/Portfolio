@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Title - Anirudh Raghavan</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../project-style.css" />
+  <link rel="stylesheet" href="project-styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
@@ -17,11 +17,48 @@
       <div class="nav-brand">
         <h1>Anirudh Raghavan</h1>
       </div>
+      
+      <!-- Desktop Back Button -->
       <a href="../index.html#projects" class="back-to-projects">
         <i class="fas fa-arrow-left"></i> Back to Portfolio
       </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="project-hamburger-btn" id="project-hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="project-nav-menu" id="project-nav-menu">
+      <a href="../index.html#home">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="../index.html#about">
+        <i class="fas fa-user"></i> About
+      </a>
+      <a href="../index.html#skills">
+        <i class="fas fa-cogs"></i> Skills
+      </a>
+      <a href="../index.html#projects">
+        <i class="fas fa-folder-open"></i> Projects
+      </a>
+      <a href="../index.html#certifications">
+        <i class="fas fa-certificate"></i> Certifications
+      </a>
+      <a href="../index.html#publications">
+        <i class="fas fa-book"></i> Publications
+      </a>
+      <a href="../index.html#contact">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
     </div>
   </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -38,10 +75,10 @@
       <section class="image-gallery">
         <div class="gallery-grid">
           <div class="project-image">
-            <img src="../Images/HMI_1.jpg" alt="Object Detection Results" />
+            <img src="../Images/OD_SS_1.jpg" alt="Object Detection Results" />
           </div>
           <div class="project-image">
-            <img src="../Images/HMI_1.jpg" alt="Semantic Segmentation" />
+            <img src="../Images/OD_SS_2.jpg" alt="Semantic Segmentation" />
           </div>
         </div>
       </section>
@@ -110,6 +147,47 @@
   </main>
 
   <script>
+    // Mobile navigation functionality
+    const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
+    const projectNavMenu = document.getElementById('project-nav-menu');
+    const projectOverlay = document.getElementById('project-mobile-overlay');
+    const body = document.body;
+
+    function toggleProjectMobileMenu() {
+      projectNavMenu.classList.toggle('nav-menu-open');
+      projectHamburgerBtn.classList.toggle('hamburger-active');
+      projectOverlay.classList.toggle('overlay-active');
+      body.classList.toggle('no-scroll');
+    }
+
+    function closeProjectMobileMenu() {
+      projectNavMenu.classList.remove('nav-menu-open');
+      projectHamburgerBtn.classList.remove('hamburger-active');
+      projectOverlay.classList.remove('overlay-active');
+      body.classList.remove('no-scroll');
+    }
+
+    // Event listeners
+    if (projectHamburgerBtn) {
+      projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
+    }
+    
+    if (projectOverlay) {
+      projectOverlay.addEventListener('click', closeProjectMobileMenu);
+    }
+
+    // Close menu when clicking nav links
+    document.querySelectorAll('.project-nav-menu a').forEach(link => {
+      link.addEventListener('click', closeProjectMobileMenu);
+    });
+
+    // Close menu on window resize
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        closeProjectMobileMenu();
+      }
+    });
+
     // Smooth loading animation
     window.addEventListener('load', function () {
       document.body.style.opacity = '0';

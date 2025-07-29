@@ -1,3 +1,4 @@
+/* Additional Project Page Styles - To be used alongside main style.css */
 
 /* Project Header Specific Styles */
 .project-header {
@@ -70,6 +71,7 @@
 }
 
 
+
 /* Content Sections */
 .content-section {
   background: white;
@@ -139,6 +141,107 @@
   box-shadow: 0 4px 15px rgba(123, 104, 238, 0.4) !important;
 }
 
+/* Mobile Navigation Styles for Project Pages */
+.project-nav-menu {
+  display: none; /* Hidden by default on project pages */
+}
+
+/* Mobile hamburger menu for project pages */
+.project-hamburger-btn {
+  display: none;
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  border: none;
+  border-radius: 8px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.project-hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.project-hamburger-btn.hamburger-active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.project-hamburger-btn.hamburger-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.project-hamburger-btn.hamburger-active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile overlay for project pages */
+.project-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-mobile-overlay.overlay-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile menu for project pages */
+.project-nav-menu {
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+  transition: left 0.3s ease;
+  z-index: 998;
+}
+
+.project-nav-menu.nav-menu-open {
+  left: 0;
+}
+
+.project-nav-menu a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+  display: block;
+}
+
+.project-nav-menu a:hover {
+  color: white;
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
 /* Action Buttons */
 .action-buttons {
   display: flex;
@@ -189,6 +292,24 @@
 
 /* Responsive Design for Project Pages */
 @media (max-width: 768px) {
+  /* Show mobile elements */
+  .project-hamburger-btn {
+    display: flex;
+  }
+
+  .project-mobile-overlay {
+    display: block;
+  }
+
+  .project-nav-menu {
+    display: flex;
+  }
+
+  /* Hide desktop back button on mobile, show in mobile menu instead */
+  .back-to-projects {
+    display: none;
+  }
+
   .project-header {
     padding-top: 120px;
   }
