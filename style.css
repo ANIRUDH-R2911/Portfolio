@@ -321,7 +321,7 @@ body.no-scroll {
 }
 
 .project-card {
-  background: rgb(147, 145, 145);
+  background: rgb(188, 187, 187);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -336,7 +336,7 @@ body.no-scroll {
 
 .project-image {
   position: relative;
-  width: 150%;
+  width: 100%;
   height: 250px;
   overflow: hidden;
 }

@@ -56,7 +56,7 @@
 }
 
 .project-image img {
-  width: 150px;
+  width: 100%;
   height: 350px;
   object-fit: contain;
   object-position: center;
