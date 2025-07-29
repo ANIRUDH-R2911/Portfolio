@@ -19,13 +19,13 @@ body.no-scroll {
   overflow: hidden;
 }
 
-
+/* Navigation Styles */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%,#333 100%);
   backdrop-filter: blur(10px);
   z-index: 1000;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -77,7 +77,7 @@ body.no-scroll {
   box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
-
+/* Hamburger Menu */
 .hamburger-btn {
   display: none;
   background: linear-gradient(135deg, #4a90e2, #7b68ee);
@@ -114,7 +114,7 @@ body.no-scroll {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
+/* Mobile Overlay */
 .mobile-overlay {
   display: none;
   position: fixed;
@@ -134,7 +134,7 @@ body.no-scroll {
   visibility: visible;
 }
 
-
+/* Main Content */
 .main-content {
   padding-top: 70px;
 }
@@ -298,17 +298,17 @@ body.no-scroll {
   color: white;
 }
 
-
+/* About Section */
 .about-section {
   background: white;
 }
 
-
+/* Skills Section */
 .skills-section {
   background: gainsboro;
 }
 
-
+/* Projects Section */
 .projects-section {
   background: white;
 }
@@ -408,6 +408,7 @@ body.no-scroll {
 }
 
 
+/* Certifications Section */
 .certifications-section {
   background: gainsboro;
 }
@@ -428,7 +429,7 @@ body.no-scroll {
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  color: white
+  color:white
 }
 
 .certificate-card:hover {
@@ -444,10 +445,12 @@ body.no-scroll {
 }
 
 
+/* Publications Section */
 .publications-section {
   background: white;
 }
 
+/* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, #1f3189 0%, #2d4db8 50%, #4a90e2 100%);
   color: white;
@@ -461,116 +464,7 @@ body.no-scroll {
   color: #e8f4fd;
 }
 
-.contact-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.contact-intro {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #e8f4fd;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.contact-methods {
-  display: grid;
-  gap: 25px;
-  margin-bottom: 50px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.contact-icon {
-  background: linear-gradient(135deg, #4a90e2, #7b68ee);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
-}
-
-.contact-details h3 {
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 5px 0;
-}
-
-.contact-details a {
-  color: #e8f4fd;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.contact-details a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.quick-info {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.quick-info h3 {
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.info-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.info-label {
-  color: #e8f4fd;
-  font-weight: 500;
-}
-
-.info-value {
-  color: white;
-  font-weight: 600;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .hamburger-btn {
     display: flex;
@@ -680,30 +574,14 @@ body.no-scroll {
     width: 200px;
     height: 200px;
   }
-
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .info-item {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
 }
 
+/* Animation Classes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
