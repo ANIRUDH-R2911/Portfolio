@@ -11,19 +11,16 @@
 </head>
 
 <body>
-  <!-- Navigation Banner -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
         <h1>Anirudh Raghavan</h1>
       </div>
-      
-      <!-- Desktop Back Button -->
+
       <a href="../index.html#projects" class="back-to-projects">
         <i class="fas fa-arrow-left"></i> Back to Portfolio
       </a>
 
-      <!-- Mobile Hamburger Button -->
       <button class="project-hamburger-btn" id="project-hamburger-btn">
         <span></span>
         <span></span>
@@ -31,7 +28,6 @@
       </button>
     </div>
 
-    <!-- Mobile Navigation Menu -->
     <div class="project-nav-menu" id="project-nav-menu">
       <a href="../index.html#home"> Home
       </a>
@@ -50,84 +46,93 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay -->
   <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
 
-  <!-- Main Content -->
   <main class="main-content">
-    <!-- Project Header -->
     <section class="project-header">
       <div class="project-title">
-        <h1>EXPLORING OBJECT DETECTION AND SEMANTIC SEGMENTATION</h1>
+        <h1>Turtlebot4-Perception</h1>
       </div>
     </section>
 
-    <!-- Project Content -->
     <div class="project-content">
-      <!-- Image Gallery -->
       <section class="image-gallery">
         <div class="gallery-grid">
           <div class="project-image">
-            <img src="../Images/OD_SS_1.jpg" alt="Object Detection Results" />
-          </div>
-          <div class="project-image">
-            <img src="../Images/OD_SS_2.jpg" alt="Semantic Segmentation" />
+            <img src="../Images/Red_Ball_Tracker.png" alt="Results" />
           </div>
         </div>
       </section>
 
-      <!-- Project Overview -->
       <section class="content-section">
         <h2>Project Overview</h2>
         <p>
-          This project explores advanced computer vision techniques for autonomous driving applications, focusing on object detection and semantic segmentation of road scenes. The work involves implementing and comparing different neural network architectures to understand their effectiveness in real-world driving scenarios.
+          Developed a ROS 2-based perception and control system that enables a TurtleBot4 robot to autonomously detect,
+          track, and follow a red ball using live camera input. The system was built and tested in a Gazebo simulation
+          environment and is designed to be directly extensible to real-world deployment
         </p>
-        <p>
-          The project addresses critical challenges in autonomous vehicle perception, including accurate detection of vehicles, pedestrians, traffic signs, and road infrastructure while providing pixel-level understanding of the driving environment through semantic segmentation.
-        </p>
-        
+
         <div class="tech-stack">
-          <span class="tech-tag">Computer Vision</span>
-          <span class="tech-tag">Deep Learning</span>
-          <span class="tech-tag">YOLO</span>
-          <span class="tech-tag">U-Net</span>
+          <span class="tech-tag">ROS2 Humble</span>
           <span class="tech-tag">Python</span>
+          <span class="tech-tag">Gazebo</span>
+          <span class="tech-tag">cv_bridge</span>
+          <span class="tech-tag">sensor_msgs</span>
           <span class="tech-tag">OpenCV</span>
-          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">PID Control</span>
+          <span class="tech-tag">geometry_msgs</span>
         </div>
       </section>
 
-      <!-- Technical Implementation -->
       <section class="content-section">
         <h2>Technical Implementation</h2>
         <p>
-          The implementation involved developing and training two complementary computer vision models:
+          <strong>ROS 2 Pipeline Design:</strong>
         </p>
         <ul>
-          <li><strong>Object Detection:</strong> Implemented YOLO (You Only Look Once) architecture for real-time detection of vehicles, pedestrians, and traffic infrastructure</li>
-          <li><strong>Semantic Segmentation:</strong> Developed U-Net based model for pixel-level classification of road scenes, enabling detailed understanding of drivable areas, sidewalks, and road markings</li>
-          <li><strong>Data Processing:</strong> Extensive preprocessing and augmentation of road scene datasets to improve model robustness</li>
-          <li><strong>Performance Optimization:</strong> Model optimization techniques to achieve real-time inference speeds suitable for autonomous driving applications</li>
-        </ul>
-      </section>
+          <li> Created modular ROS 2 nodes (publishers and subscribers) for camera streaming, image processing, and motion control </li>
+        </ul> <br>
 
-      <!-- Results and Impact -->
-      <section class="content-section">
-        <h2>Results and Impact</h2>
         <p>
-          The project successfully demonstrated the effectiveness of combining object detection and semantic segmentation for comprehensive scene understanding in autonomous driving contexts. Key achievements include:
+          <strong>Computer Vision (OpenCV):</strong>
         </p>
         <ul>
-          <li>Achieved high accuracy in multi-class object detection with real-time inference capabilities</li>
-          <li>Developed robust semantic segmentation model capable of pixel-level scene understanding</li>
-          <li>Created comprehensive evaluation framework comparing different architectural approaches</li>
-          <li>Contributed to understanding of computer vision applications in autonomous vehicle perception systems</li>
+          <li> Applied color-based segmentation in HSV space to isolate red objects </li>
+          <li> Used contour detection to compute bounding boxes and extract object position and size for tracking logic </li>
+        </ul><br>
+
+        <p>
+          <strong>Control System:</strong>
+        </p>
+        <ul>
+          <li> Designed a PID controller to compute linear and angular velocity commands based on ball alignment and distance </li>
+          <li> Ensured smooth, real-time control to enable behavior like approach, avoidance, and fallback search when the ball is lost
+          </li>
+        </ul><br>
+
+        <p>
+          <strong>Simulation Testing (Gazebo):</strong>
+        </p>
+        <ul>
+          <li> Set up and evaluated robot behavior in the Gazebo simulator, simulating realistic sensor input and environmental interaction </li>
         </ul>
       </section>
 
-      <!-- Action Buttons -->
+
+      <section class="content-section">
+        <h2>Results</h2>
+        <ul>
+          <li> Achieved real-time tracking of a red ball using simulated camera feed </li>
+          <li> Accurate positional data published via ROS topics, visualized using RViz and custom debug overlays </li>
+          <li> Demonstrated a complete closed-loop system from perception to control </li>
+          <li> Designed the system to be modular and extensible, allowing seamless migration to physical TurtleBot4 hardware </li>
+          <li> Validated behaviors such as dynamic alignment, velocity scaling, and robust fallback modes for when the ball is temporarily lost</li>
+        </ul>
+      </section>
+
+
       <div class="action-buttons">
-        <a href="https://github.com/ANIRUDH-R2911" target="_blank" class="action-btn github-btn">
+        <a href="https://github.com/ANIRUDH-R2911/Turtlebot4-Perception" target="_blank" class="action-btn github-btn">
           <i class="fab fa-github"></i>
           View on GitHub
         </a>
@@ -140,7 +145,6 @@
   </main>
 
   <script>
-    // Mobile navigation functionality
     const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
     const projectNavMenu = document.getElementById('project-nav-menu');
     const projectOverlay = document.getElementById('project-mobile-overlay');
@@ -160,28 +164,24 @@
       body.classList.remove('no-scroll');
     }
 
-    // Event listeners
     if (projectHamburgerBtn) {
       projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
     }
-    
+
     if (projectOverlay) {
       projectOverlay.addEventListener('click', closeProjectMobileMenu);
     }
 
-    // Close menu when clicking nav links
     document.querySelectorAll('.project-nav-menu a').forEach(link => {
       link.addEventListener('click', closeProjectMobileMenu);
     });
 
-    // Close menu on window resize
     window.addEventListener('resize', function () {
       if (window.innerWidth > 768) {
         closeProjectMobileMenu();
       }
     });
 
-    // Smooth loading animation
     window.addEventListener('load', function () {
       document.body.style.opacity = '0';
       setTimeout(() => {
@@ -190,9 +190,8 @@
       }, 100);
     });
 
-    // Image lazy loading and error handling
     document.querySelectorAll('.project-image img').forEach(img => {
-      img.addEventListener('error', function() {
+      img.addEventListener('error', function () {
         this.style.display = 'none';
         this.parentElement.innerHTML = '<div style="height: 300px; background: linear-gradient(135deg, #f0f0f0, #e0e0e0); display: flex; align-items: center; justify-content: center; color: #666;"><i class="fas fa-image" style="font-size: 48px;"></i></div>';
       });
