@@ -11,19 +11,16 @@
 </head>
 
 <body>
-  <!-- Navigation Banner -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
         <h1>Anirudh Raghavan</h1>
       </div>
-      
-      <!-- Desktop Back Button -->
+
       <a href="../index.html#projects" class="back-to-projects">
         <i class="fas fa-arrow-left"></i> Back to Portfolio
       </a>
 
-      <!-- Mobile Hamburger Button -->
       <button class="project-hamburger-btn" id="project-hamburger-btn">
         <span></span>
         <span></span>
@@ -31,7 +28,6 @@
       </button>
     </div>
 
-    <!-- Mobile Navigation Menu -->
     <div class="project-nav-menu" id="project-nav-menu">
       <a href="../index.html#home"> Home
       </a>
@@ -50,84 +46,97 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay -->
   <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
 
-  <!-- Main Content -->
   <main class="main-content">
-    <!-- Project Header -->
     <section class="project-header">
       <div class="project-title">
-        <h1>EXPLORING OBJECT DETECTION AND SEMANTIC SEGMENTATION</h1>
+        <h1>TRAFFIC SIGN RECOGNITION USING DEEP LEARNING AND TKINTER</h1>
       </div>
     </section>
 
-    <!-- Project Content -->
     <div class="project-content">
-      <!-- Image Gallery -->
       <section class="image-gallery">
         <div class="gallery-grid">
           <div class="project-image">
-            <img src="../Images/OD_SS_1.jpg" alt="Object Detection Results" />
+            <img src="../Images/TSR_Accuracy.png" alt="Results" />
           </div>
           <div class="project-image">
-            <img src="../Images/OD_SS_2.jpg" alt="Semantic Segmentation" />
+            <img src="../Images/TSR_Loss.png" alt="Results" />
+          </div>
+          <div class="project-image">
+            <img src="../Images/TSR_GUI_OUTPUT.png" alt="Results" />
           </div>
         </div>
       </section>
 
-      <!-- Project Overview -->
       <section class="content-section">
         <h2>Project Overview</h2>
         <p>
-          This project explores advanced computer vision techniques for autonomous driving applications, focusing on object detection and semantic segmentation of road scenes. The work involves implementing and comparing different neural network architectures to understand their effectiveness in real-world driving scenarios.
+          Developed a deep learning-based traffic sign classification system using the GTSRB dataset, achieving high
+          accuracy suitable for real-world scenarios. The trained model was integrated into a Tkinter-based GUI
+          application that allows users to upload traffic sign images and receive real-time classification results,
+          demonstrating a complete end-to-end pipeline.
         </p>
-        <p>
-          The project addresses critical challenges in autonomous vehicle perception, including accurate detection of vehicles, pedestrians, traffic signs, and road infrastructure while providing pixel-level understanding of the driving environment through semantic segmentation.
-        </p>
-        
+
         <div class="tech-stack">
-          <span class="tech-tag">Computer Vision</span>
-          <span class="tech-tag">Deep Learning</span>
-          <span class="tech-tag">YOLO</span>
-          <span class="tech-tag">U-Net</span>
           <span class="tech-tag">Python</span>
-          <span class="tech-tag">OpenCV</span>
-          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">Tensorflow/span>
+            <span class="tech-tag">Keras</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Pillow</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">Tkinter</span>
         </div>
       </section>
 
-      <!-- Technical Implementation -->
       <section class="content-section">
         <h2>Technical Implementation</h2>
         <p>
-          The implementation involved developing and training two complementary computer vision models:
+          <strong>CNN Model Design & Training:</strong>
         </p>
         <ul>
-          <li><strong>Object Detection:</strong> Implemented YOLO (You Only Look Once) architecture for real-time detection of vehicles, pedestrians, and traffic infrastructure</li>
-          <li><strong>Semantic Segmentation:</strong> Developed U-Net based model for pixel-level classification of road scenes, enabling detailed understanding of drivable areas, sidewalks, and road markings</li>
-          <li><strong>Data Processing:</strong> Extensive preprocessing and augmentation of road scene datasets to improve model robustness</li>
-          <li><strong>Performance Optimization:</strong> Model optimization techniques to achieve real-time inference speeds suitable for autonomous driving applications</li>
+          <li> Built a custom CNN architecture incorporating batch normalization, dropout, and data augmentation to
+            improve generalization and reduce overfitting </li>
+          <li> Used TensorFlow and Keras for model development, training, and evaluation </li>
+        </ul> <br>
+
+        <p>
+          <strong>Data Processing:</strong>
+        </p>
+        <ul>
+          <li> Performed image resizing, normalization, and augmentation (rotation, scaling, shifting) for robust training </li>
+          <li> Preprocessed input images for consistency and optimal feature extraction </li>
+        </ul><br>
+
+        <p>
+          <strong>GUI Integration:</strong>
+        </p>
+        <ul>
+          <li> Designed a Tkinter-based GUI allowing users to upload images and view classification results with real-time model inference </li>
+          <li> Connected the trained model with the GUI using Pillow and NumPy for image handling and preprocessing </li>
+        </ul><br>
+
+        <p>
+          <strong>Deployment:</strong>
+        </p>
+        <ul>
+          <li> Saved the trained model using Keras (.h5) format for efficient loading and reuse in applications </li>
         </ul>
       </section>
 
-      <!-- Results and Impact -->
       <section class="content-section">
         <h2>Results and Impact</h2>
-        <p>
-          The project successfully demonstrated the effectiveness of combining object detection and semantic segmentation for comprehensive scene understanding in autonomous driving contexts. Key achievements include:
-        </p>
         <ul>
-          <li>Achieved high accuracy in multi-class object detection with real-time inference capabilities</li>
-          <li>Developed robust semantic segmentation model capable of pixel-level scene understanding</li>
-          <li>Created comprehensive evaluation framework comparing different architectural approaches</li>
-          <li>Contributed to understanding of computer vision applications in autonomous vehicle perception systems</li>
+          <li><strong>Validation Accuracy:</strong> 99.95% </li>
+          <li><strong>Test Accuracy:</strong> 98.6%</li>
+          <li> Demonstrated high-performance traffic sign recognition, even on previously unseen data, with fast and accurate predictions </li>
+          <li>Successfully deployed a complete, user-facing application, highlighting the practical utility of deep learning models in transportation and driver-assistance systems</li>
         </ul>
       </section>
 
-      <!-- Action Buttons -->
       <div class="action-buttons">
-        <a href="https://github.com/ANIRUDH-R2911" target="_blank" class="action-btn github-btn">
+        <a href="https://github.com/ANIRUDH-R2911/Traffic-Sign-Recognition" target="_blank" class="action-btn github-btn">
           <i class="fab fa-github"></i>
           View on GitHub
         </a>
@@ -140,7 +149,6 @@
   </main>
 
   <script>
-    // Mobile navigation functionality
     const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
     const projectNavMenu = document.getElementById('project-nav-menu');
     const projectOverlay = document.getElementById('project-mobile-overlay');
@@ -160,28 +168,24 @@
       body.classList.remove('no-scroll');
     }
 
-    // Event listeners
     if (projectHamburgerBtn) {
       projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
     }
-    
+
     if (projectOverlay) {
       projectOverlay.addEventListener('click', closeProjectMobileMenu);
     }
 
-    // Close menu when clicking nav links
     document.querySelectorAll('.project-nav-menu a').forEach(link => {
       link.addEventListener('click', closeProjectMobileMenu);
     });
 
-    // Close menu on window resize
     window.addEventListener('resize', function () {
       if (window.innerWidth > 768) {
         closeProjectMobileMenu();
       }
     });
 
-    // Smooth loading animation
     window.addEventListener('load', function () {
       document.body.style.opacity = '0';
       setTimeout(() => {
@@ -190,9 +194,8 @@
       }, 100);
     });
 
-    // Image lazy loading and error handling
     document.querySelectorAll('.project-image img').forEach(img => {
-      img.addEventListener('error', function() {
+      img.addEventListener('error', function () {
         this.style.display = 'none';
         this.parentElement.innerHTML = '<div style="height: 300px; background: linear-gradient(135deg, #f0f0f0, #e0e0e0); display: flex; align-items: center; justify-content: center; color: #666;"><i class="fas fa-image" style="font-size: 48px;"></i></div>';
       });
