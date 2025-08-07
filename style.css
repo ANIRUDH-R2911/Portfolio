@@ -172,7 +172,7 @@ body.no-scroll {
 .home-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('Images/Portfolio BG.png') center/cover no-repeat;
-  color: white;
+  color: black;
   min-height: 100vh;
   margin-top: -70px;
   padding-top: 70px;
@@ -294,17 +294,17 @@ body.no-scroll {
 
 /* About Section */
 .about-section {
-  background: white;
+  background: black;
 }
 
 /* Skills Section */
 .skills-section {
-  background: gainsboro;
+  background: black;
 }
 
 /* Projects Section */
 .projects-section {
-  background: white;
+  background: black;
 }
 
 .projects-grid {
@@ -404,7 +404,7 @@ body.no-scroll {
 
 /* Certifications Section */
 .certifications-section {
-  background: gainsboro;
+  background: black;
 }
 
 .certificates-grid {
@@ -441,7 +441,7 @@ body.no-scroll {
 
 /* Publications Section */
 .publications-section {
-  background: white;
+  background: black;
 }
 
 /* Contact Section */
