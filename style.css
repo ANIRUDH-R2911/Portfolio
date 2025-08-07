@@ -145,7 +145,7 @@ body.no-scroll {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 100%;
+ /* max-width: 1200px;*/
   margin: 0 auto;
 }
 
@@ -181,6 +181,7 @@ body.no-scroll {
     url('Images/Portfolio BG.png') center/cover no-repeat;
   color: white;
   min-height: 100vh;
+  width: 100%;
   margin-top: -70px;
   padding-top: 70px;
   display: flex;
