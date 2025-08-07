@@ -145,7 +145,7 @@ body.no-scroll {
   display: flex;
   flex-direction: column;
   justify-content: center;
-/* max-width: 1200px;*/
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -168,11 +168,6 @@ body.no-scroll {
   margin: 0 auto;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 
 /* Home Section */
