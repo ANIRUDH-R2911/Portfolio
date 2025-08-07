@@ -205,7 +205,7 @@ body.no-scroll {
   letter-spacing: 3px;
   text-shadow: 3px 3px 4px rgba(27, 26, 26, 0.458);
   margin: 0;
-  background: linear-gradient(45deg, #ffffff, #d4e7f6);
+  background: linear-gradient(60deg, #cce6ff, #1e3d6b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
