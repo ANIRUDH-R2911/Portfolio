@@ -171,7 +171,7 @@ body.no-scroll {
 /* Home Section */
 .home-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('../Images/Portfolio BG.png') center/cover no-repeat;
+              url('Images/Portfolio BG.png') center/cover no-repeat;
   color: white;
   min-height: 100vh;
   margin-top: -70px;
@@ -508,16 +508,12 @@ body.no-scroll {
     padding-top: 120px;
   }
 
-  .intro-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
+  .home-content h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
   }
 
-  .image-container img {
-    width: 250px;
-    height: 250px;
-  }
 
   .text-container h2 {
     font-size: 36px;
@@ -554,6 +550,12 @@ body.no-scroll {
 
   .section {
     padding: 50px 10px;
+  }
+
+    .home-content h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
   }
 
   .section-header h2 {
