@@ -10,9 +10,9 @@ html {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: whitesmoke;
+  background-color: white;
   line-height: 1.6;
-  color: #333;
+  color: black;
 }
 
 body.no-scroll {
@@ -294,17 +294,17 @@ body.no-scroll {
 
 /* About Section */
 .about-section {
-  background: black;
+  background: white;
 }
 
 /* Skills Section */
 .skills-section {
-  background: black;
+  background: #e6f0ff;
 }
 
 /* Projects Section */
 .projects-section {
-  background: black;
+  background: white;
 }
 
 .projects-grid {
@@ -404,7 +404,7 @@ body.no-scroll {
 
 /* Certifications Section */
 .certifications-section {
-  background: black;
+  background: #e6f0ff;
 }
 
 .certificates-grid {
@@ -441,7 +441,7 @@ body.no-scroll {
 
 /* Publications Section */
 .publications-section {
-  background: black;
+  background: white;
 }
 
 /* Contact Section */
