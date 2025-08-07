@@ -168,6 +168,13 @@ body.no-scroll {
   margin: 0 auto;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+
 /* Home Section */
 .home-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
