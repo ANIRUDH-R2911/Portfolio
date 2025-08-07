@@ -209,7 +209,6 @@ body.no-scroll {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: fadeInUp 1s ease-out;
 }
 
 .text-container h2 {
