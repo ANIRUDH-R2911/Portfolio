@@ -194,7 +194,7 @@ body.no-scroll {
   letter-spacing: 3px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   margin: 0;
-  background: linear-gradient(45deg, #ffffff, #e8f4fd);
+  background: linear-gradient(45deg, #ffffff, #d6eaff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -404,7 +404,7 @@ body.no-scroll {
 
 /* Certifications Section */
 .certifications-section {
-  background: #e6f0ff;
+  background: #f3f4f6;
 }
 
 .certificates-grid {
