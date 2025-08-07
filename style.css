@@ -211,6 +211,20 @@ body.no-scroll {
   letter-spacing: 2px;
 }
 
+.tagline {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  background: linear-gradient(60deg, #b5d9ff, #5b91e3); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.25);
+  margin-top: 12px;
+  animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
 .text-container h3 {
   font-size: 28px;
   margin-bottom: 25px;
@@ -585,6 +599,11 @@ body.no-scroll {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .section {
