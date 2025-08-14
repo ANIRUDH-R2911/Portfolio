@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJWLE4VV1K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-KJWLE4VV1K');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Title - Anirudh Raghavan</title>
@@ -90,7 +99,8 @@
           <strong>ROS 2 Pipeline Design:</strong>
         </p>
         <ul>
-          <li> Created modular ROS 2 nodes (publishers and subscribers) for camera streaming, image processing, and motion control </li>
+          <li> Created modular ROS 2 nodes (publishers and subscribers) for camera streaming, image processing, and
+            motion control </li>
         </ul> <br>
 
         <p>
@@ -98,15 +108,18 @@
         </p>
         <ul>
           <li> Applied color-based segmentation in HSV space to isolate red objects </li>
-          <li> Used contour detection to compute bounding boxes and extract object position and size for tracking logic </li>
+          <li> Used contour detection to compute bounding boxes and extract object position and size for tracking logic
+          </li>
         </ul><br>
 
         <p>
           <strong>Control System:</strong>
         </p>
         <ul>
-          <li> Designed a PID controller to compute linear and angular velocity commands based on ball alignment and distance </li>
-          <li> Ensured smooth, real-time control to enable behavior like approach, avoidance, and fallback search when the ball is lost
+          <li> Designed a PID controller to compute linear and angular velocity commands based on ball alignment and
+            distance </li>
+          <li> Ensured smooth, real-time control to enable behavior like approach, avoidance, and fallback search when
+            the ball is lost
           </li>
         </ul><br>
 
@@ -114,7 +127,8 @@
           <strong>Simulation Testing (Gazebo):</strong>
         </p>
         <ul>
-          <li> Set up and evaluated robot behavior in the Gazebo simulator, simulating realistic sensor input and environmental interaction </li>
+          <li> Set up and evaluated robot behavior in the Gazebo simulator, simulating realistic sensor input and
+            environmental interaction </li>
         </ul>
       </section>
 
@@ -125,8 +139,10 @@
           <li> Achieved real-time tracking of a red ball using simulated camera feed </li>
           <li> Accurate positional data published via ROS topics, visualized using RViz and custom debug overlays </li>
           <li> Demonstrated a complete closed-loop system from perception to control </li>
-          <li> Designed the system to be modular and extensible, allowing seamless migration to physical TurtleBot4 hardware </li>
-          <li> Validated behaviors such as dynamic alignment, velocity scaling, and robust fallback modes for when the ball is temporarily lost</li>
+          <li> Designed the system to be modular and extensible, allowing seamless migration to physical TurtleBot4
+            hardware </li>
+          <li> Validated behaviors such as dynamic alignment, velocity scaling, and robust fallback modes for when the
+            ball is temporarily lost</li>
         </ul>
       </section>
 
