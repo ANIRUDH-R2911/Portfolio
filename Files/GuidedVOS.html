@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJWLE4VV1K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KJWLE4VV1K');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSANet Reimplementation - Anirudh Raghavan</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../project-style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Anirudh Raghavan</h1>
+            </div>
+
+            <a href="../index.html#projects" class="back-to-projects">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+
+            <button class="project-hamburger-btn" id="project-hamburger-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="project-nav-menu" id="project-nav-menu">
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#skills">Skills</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#certifications">Certifications</a>
+            <a href="../index.html#publications">Publications</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
+
+    <main class="main-content">
+        <section class="project-header">
+            <div class="project-title">
+                <h1>STRUCTURED SLOT AGGREGATION FOR CROSS-MODAL VIDEO OBJECT SEGMENTATION</h1>
+            </div>
+        </section>
+
+        <div class="project-content">
+
+            <!-- IMAGE -->
+            <section class="image-gallery">
+                <div class="gallery-grid">
+                    <div class="project-image">
+                        <img src="../Images/cows_triple.gif" alt="GSANet Results" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- OVERVIEW -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    This project implements the complete pipeline of the
+                    <strong>Guided Slot Attention Network (GSANet)</strong>
+                    for <strong>unsupervised video object segmentation</strong>.
+                    The model combines appearance (RGB) and motion (optical flow) cues, extracted through
+                    dual SegFormer-B2 encoders, and leverages slot-based representation learning
+                    to track and segment objects consistently across video sequences.
+                </p>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">SegFormer</span>
+                    <span class="tech-tag">Slot Attention</span>
+                    <span class="tech-tag">Optical Flow (RAFT)</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">Transformer Models</span>
+                </div>
+            </section>
+
+            <!-- TECHNICAL IMPLEMENTATION -->
+            <section class="content-section">
+                <h2>Technical Implementation</h2>
+
+                <p><strong>1. Saliency Pretraining (DUTS):</strong></p>
+                <ul>
+                    <li>Built a SegFormer-B2-based saliency network with atrous feature modules.</li>
+                    <li>Pretrained on DUTS-TR to learn objectness and boundary cues.</li>
+                    <li>Produced multi-scale saliency predictions as initialization.</li>
+                </ul><br>
+
+                <p><strong>2. Video Model (GSANet):</strong></p>
+                <ul>
+                    <li>Dual-stream encoders extract RGB and Flow features at 4 scales.</li>
+                    <li>Slot Generator creates K-means prototypes + attention-based slot prototypes.</li>
+                    <li>Reference frames provide additional temporal prototypes.</li>
+                    <li>Feature Aggregation Transformer (FAT) fuses global and local slot information.</li>
+                    <li>Decoder performs multi-scale fusion and mask refinement.</li>
+                </ul><br>
+
+                <p><strong>3. Datasets:</strong></p>
+                <ul>
+                    <li>Optical flow generated using RAFT.</li>
+                    <li>DUTS for pretraining; DAVIS-2016 train/test for finetuning and evaluation.</li>
+                </ul>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="content-section">
+                <h2>Results</h2>
+
+                <p><strong>Qualitative Visualization:</strong></p>
+                <div style="text-align:center; margin-top:20px;">
+                    <img src="../Images/cows_visual_grid_00000.jpg" width="700" alt="GSANet Grid Visualization" />
+                </div>
+
+                <p style="margin-top:20px;"><strong>Panels (A-H):</strong></p>
+                <ul>
+                    <li>A — RGB Frame</li>
+                    <li>B — Optical Flow (RAFT)</li>
+                    <li>C — Predicted Mask</li>
+                    <li>D — Ground Truth Mask</li>
+                    <li>E — RGB Slot (Foreground)</li>
+                    <li>F — RGB Slot (Background)</li>
+                    <li>G — Flow Slot (Foreground)</li>
+                    <li>H — Flow Slot (Background)</li>
+                </ul>
+
+                <h3>Quantitative Results (DAVIS-2016)</h3>
+                <ul>
+                    <li><strong>Mean IoU (J):</strong> 0.8518</li>
+                    <li><strong>Boundary F-measure:</strong> 0.84</li>
+                    <li><strong>J Recall:</strong> 0.89</li>
+                    <li><strong>Temporal Decay:</strong> ~0.02</li>
+                </ul>
+            </section>
+
+            <!-- BUTTONS -->
+            <div class="action-buttons">
+                <a href="https://github.com/ANIRUDH-R2911/GSANet-UVOS" target="_blank"
+                    class="action-btn github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+
+                <a href="../index.html#projects" class="action-btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
+        const projectNavMenu = document.getElementById('project-nav-menu');
+        const projectOverlay = document.getElementById('project-mobile-overlay');
+        const body = document.body;
+
+        function toggleProjectMobileMenu() {
+            projectNavMenu.classList.toggle('nav-menu-open');
+            projectHamburgerBtn.classList.toggle('hamburger-active');
+            projectOverlay.classList.toggle('overlay-active');
+            body.classList.toggle('no-scroll');
+        }
+
+        function closeProjectMobileMenu() {
+            projectNavMenu.classList.remove('nav-menu-open');
+            projectHamburgerBtn.classList.remove('hamburger-active');
+            projectOverlay.classList.remove('overlay-active');
+            body.classList.remove('no-scroll');
+        }
+
+        projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
+        projectOverlay.addEventListener('click', closeProjectMobileMenu);
+        document.querySelectorAll('.project-nav-menu a').forEach(link => {
+            link.addEventListener('click', closeProjectMobileMenu);
+        });
+    </script>
+</body>
+
+</html>
