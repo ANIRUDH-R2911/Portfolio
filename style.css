@@ -345,18 +345,18 @@ body.no-scroll {
 
 .education-school {
   font-size: 0.92rem;
-  color: #555;
+  color: black;
 }
 
 .education-date {
   font-size: 0.88rem;
-  color: #777;
+  color: black;
   white-space: nowrap;
 }
 
 .education-detail {
   font-size: 0.9rem;
-  color: #444;
+  color: black;
   line-height: 1.6;
   margin-top: 4px;
 }
@@ -461,12 +461,12 @@ body.no-scroll {
 
 .experience-org {
   font-size: 0.92rem;
-  color: #555;
+  color: black;
 }
 
 .experience-date {
   font-size: 0.88rem;
-  color: #777;
+  color: black;
   white-space: nowrap;
 }
 
@@ -477,7 +477,7 @@ body.no-scroll {
 
 .experience-bullets li {
   font-size: 0.92rem;
-  color: #444;
+  color: black;
   line-height: 1.6;
   margin-bottom: 0.4rem;
 }
@@ -618,12 +618,12 @@ body.no-scroll {
 }
 
 .pub-authors {
-  color: #444;
+  color: black;
   font-size: 0.92rem;
 }
 
 .pub-meta {
-  color: #555;
+  color: black;
   font-size: 0.88rem;
 }
 
@@ -635,7 +635,7 @@ body.no-scroll {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #333;
+  color: black;
 }
 
 .pub-divider {
