@@ -219,7 +219,7 @@ body.no-scroll {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); 
   margin-top: 12px;
   letter-spacing: 0.5px;
-  animation: fadeIn 1.5s ease-out 0.5s both;
+  /*animation: fadeIn 1.5s ease-out 0.5s both;*/
 }
 
 .text-container h3 {
