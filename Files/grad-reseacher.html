@@ -589,11 +589,11 @@
             <h2>What Was This Work About?</h2>
             <p>Autonomous driving stacks depend on object detectors to reliably identify vehicles and pedestrians in
                 real time. But how do modern standalone YOLO models actually compare against the detector already
-                embedded inside a production-grade framework like Autoware? That question — simple in theory, messy in
-                practice — was the core problem this research set out to answer.</p>
+                embedded inside a production-grade framework like Autoware? That question which seems simple in theory, but messy in
+                practice was the core problem this research set out to answer.</p>
             <div class="highlight-card">
                 <p>A Python-based benchmarking framework was built from scratch to fairly evaluate four YOLO-based
-                    detectors — YOLOv8 (fine-tuned), YOLOv9, YOLO12, and Autoware's built-in YOLOX — on the same
+                    detectors: YOLOv8 (fine-tuned), YOLOv9, YOLO12, and Autoware's built-in YOLOX, on the same
                     1,900-image subset of the Waymo Open Dataset, under identical conditions and standardized metrics.
                 </p>
             </div>
@@ -631,8 +631,8 @@
                 <div class="info-card">
                     <h4>Standalone (Pre-trained)</h4>
                     <ul>
-                        <li>YOLOv9 — tested zero-shot on Waymo</li>
-                        <li>YOLO12 — latest architecture, no fine-tuning</li>
+                        <li>YOLOv9 - tested zero-shot on Waymo</li>
+                        <li>YOLO12 - latest architecture, no fine-tuning</li>
                         <li>Evaluated generalization capability</li>
                         <li>Inference via native Python APIs</li>
                     </ul>
@@ -640,8 +640,8 @@
                 <div class="info-card">
                     <h4>Domain-Adapted & Integrated</h4>
                     <ul>
-                        <li>YOLOv8 — fine-tuned on 8,000 Waymo images</li>
-                        <li>YOLOX (Autoware) — TensorRT-optimized YOLOX-S</li>
+                        <li>YOLOv8 - fine-tuned on 8,000 Waymo images</li>
+                        <li>YOLOX (Autoware) - TensorRT-optimized YOLOX-S</li>
                         <li>Autoware tested via live ROS2 perception stack</li>
                         <li>Represents real deployment conditions</li>
                     </ul>
@@ -758,7 +758,7 @@
             </div>
 
             <p style="margin-top: 18px;">Pedestrian detection told an even clearer story. YOLOv8 achieved <strong>0.85
-                    mAP@50 and 0.86 recall</strong> on the Person class — nearly double the pre-trained models (0.35)
+                    mAP@50 and 0.86 recall</strong> on the Person class, nearly double the pre-trained models (0.35)
                 and well above Autoware's YOLOX (0.39). Pedestrians are inherently harder to detect due to small size,
                 occlusion, and appearance variability, making domain adaptation especially impactful for this class.</p>
         </div>
@@ -767,11 +767,11 @@
         <div class="takeaway">
             <h3>What I Took Away</h3>
             <p>
-                The most important insight wasn't the number — it was understanding <em>why</em> the gap existed.
+                The most important insight wasn't the number, it was understanding <em>why</em> the gap existed.
                 Pre-trained models that work well on COCO struggle on driving-specific imagery because the visual
                 patterns are fundamentally different. Building the entire pipeline from annotation conversion to ROS2
                 integration taught me how much friction lies between "a model that works in a notebook" and "a model
-                that works in a system." The benchmarking framework itself is the contribution — not just the final mAP.
+                that works in a system." The benchmarking framework itself is the contribution and not just the final mAP.
             </p>
         </div>
 
