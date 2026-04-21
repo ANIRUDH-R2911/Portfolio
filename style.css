@@ -315,6 +315,54 @@ body.no-scroll {
   background: #f3f4f6;
 }
 
+/* Experience Section */
+.experience-section {
+  background: #f3f4f6;
+}
+
+.experience-item {
+  margin-bottom: 1.2rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.experience-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f3189;
+  margin-bottom: 2px;
+}
+
+.experience-org {
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.experience-date {
+  font-size: 0.88rem;
+  color: #777;
+  white-space: nowrap;
+}
+
+.experience-bullets {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.experience-bullets li {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
 /* Projects Section */
 .projects-section {
   background: white;
