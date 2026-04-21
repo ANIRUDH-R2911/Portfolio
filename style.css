@@ -363,6 +363,28 @@ body.no-scroll {
   margin-bottom: 0.4rem;
 }
 
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 22px;
+  background: linear-gradient(135deg, #1f3189, #4a90e2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(31, 49, 137, 0.2);
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(135deg, #4a90e2, #7b68ee);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.35);
+}
+
 /* Projects Section */
 .projects-section {
   background: #f3f4f6;
