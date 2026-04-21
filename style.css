@@ -317,7 +317,7 @@ body.no-scroll {
 
 /* Experience Section */
 .experience-section {
-  background: #f3f4f6;
+  background: white;
 }
 
 .experience-item {
@@ -365,7 +365,7 @@ body.no-scroll {
 
 /* Projects Section */
 .projects-section {
-  background: white;
+  background: #f3f4f6;
 }
 
 .projects-grid {
@@ -465,7 +465,7 @@ body.no-scroll {
 
 /* Certifications Section */
 .certifications-section {
-  background: #f3f4f6;
+  background: white;
 }
 
 .certificates-grid {
@@ -536,7 +536,7 @@ body.no-scroll {
 
 /* Publications Section */
 .publications-section {
-  background: white;
+  background: #f3f4f6;
 }
 
 .publication-item {
