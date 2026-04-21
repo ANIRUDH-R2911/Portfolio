@@ -239,7 +239,7 @@ body.no-scroll {
 .hero-roles {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
+  color: white;
   letter-spacing: 0.15em;
   margin-bottom: 10px;
 }
