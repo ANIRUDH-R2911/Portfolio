@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJWLE4VV1K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KJWLE4VV1K');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Title - Anirudh Raghavan</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../project-style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Anirudh Raghavan</h1>
+            </div>
+
+            <a href="../index.html#projects" class="back-to-projects">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+
+            <button class="project-hamburger-btn" id="project-hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="project-nav-menu" id="project-nav-menu">
+            <a href="../index.html#home"> Home
+            </a>
+            <a href="../index.html#about">About
+            </a>
+            <a href="../index.html#skills">Skills
+            </a>
+            <a href="../index.html#projects">Projects
+            </a>
+            <a href="../index.html#certifications">Certifications
+            </a>
+            <a href="../index.html#publications">Publications
+            </a>
+            <a href="../index.html#contact">Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="project-mobile-overlay" id="project-mobile-overlay"></div>
+
+    <main class="main-content">
+        <section class="project-header">
+            <div class="project-title">
+                <h1>COMMUNICATION-EFFICIENT EVENT-TRIGGERED CONSENSUS IN MULTI-AGENT SYSTEMS</h1>
+            </div>
+        </section>
+
+        <div class="project-content">
+            <section class="image-gallery">
+                <div class="gallery-grid">
+                    <div class="project-image">
+                        <img src="../Images/Tradeoff_Event_vs_Convergence_time.png" alt="Tradeoff" />
+                    </div>
+                    <div class="project-image">
+                        <img src="../Images/ET_Consenses.png" alt="ET Consensus behaviour" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    This project explores communication-efficient consensus protocols in multi-agent systems using
+                    event-triggered control.
+                    A simulation framework was developed to compare continuous consensus with multiple event-triggered
+                    strategies, including
+                    static threshold, decaying threshold, and neighbor-relative triggering mechanisms. The goal is to
+                    reduce communication
+                    overhead while ensuring convergence and avoiding Zeno behavior.
+                </p>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">NetworkX</span>
+                    <span class="tech-tag">Control Systems</span>
+                    <span class="tech-tag">Multi-Agent Systems</span>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Technical Implementation</h2>
+                <p><strong>Multi-Agent System Modeling:</strong></p>
+                <ul>
+                    <li> Modeled agents as nodes in a graph using NetworkX </li>
+                    <li> Implemented consensus dynamics based on Laplacian matrices </li>
+                </ul><br>
+
+                <p><strong>Continuous Consensus:</strong></p>
+                <ul>
+                    <li> Implemented baseline continuous communication between agents </li>
+                    <li> Verified convergence to global average state </li>
+                </ul><br>
+
+                <p><strong>Event-Triggered Consensus:</strong></p>
+                <ul>
+                    <li> Implemented static threshold triggering mechanism </li>
+                    <li> Developed decaying threshold strategy for improved convergence </li>
+                    <li> Implemented neighbor-relative triggering based on local disagreement </li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Results & Key Insights</h2>
+                <p><strong>Key Results:</strong></p>
+                <ul>
+                    <li> Achieved up to <strong>99% reduction</strong> in communication events </li>
+                    <li> All methods converged to the same consensus value </li>
+                    <li> Demonstrated trade-off between communication and convergence speed </li>
+                    <li> Verified absence of Zeno behavior (positive inter-event times) </li>
+                </ul><br>
+
+                <p><strong>Insights:</strong></p>
+                <ul>
+                    <li> Higher thresholds reduce communication but slow convergence </li>
+                    <li> Decaying thresholds improve convergence at the cost of communication </li>
+                    <li> Network topology significantly impacts communication load </li>
+                </ul>
+            </section>
+
+            <div class="action-buttons">
+                <a href="https://github.com/ANIRUDH-R2911/event-triggered-consensus" target="_blank"
+                    class="action-btn github-btn">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+                <a href="../index.html#projects" class="action-btn back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const projectHamburgerBtn = document.getElementById('project-hamburger-btn');
+        const projectNavMenu = document.getElementById('project-nav-menu');
+        const projectOverlay = document.getElementById('project-mobile-overlay');
+        const body = document.body;
+
+        function toggleProjectMobileMenu() {
+            projectNavMenu.classList.toggle('nav-menu-open');
+            projectHamburgerBtn.classList.toggle('hamburger-active');
+            projectOverlay.classList.toggle('overlay-active');
+            body.classList.toggle('no-scroll');
+        }
+
+        function closeProjectMobileMenu() {
+            projectNavMenu.classList.remove('nav-menu-open');
+            projectHamburgerBtn.classList.remove('hamburger-active');
+            projectOverlay.classList.remove('overlay-active');
+            body.classList.remove('no-scroll');
+        }
+
+        if (projectHamburgerBtn) {
+            projectHamburgerBtn.addEventListener('click', toggleProjectMobileMenu);
+        }
+
+        if (projectOverlay) {
+            projectOverlay.addEventListener('click', closeProjectMobileMenu);
+        }
+
+        document.querySelectorAll('.project-nav-menu a').forEach(link => {
+            link.addEventListener('click', closeProjectMobileMenu);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) {
+                closeProjectMobileMenu();
+            }
+        });
+
+        window.addEventListener('load', function () {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in-out';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        document.querySelectorAll('.project-image img').forEach(img => {
+            img.addEventListener('error', function () {
+                this.style.display = 'none';
+                this.parentElement.innerHTML = '<div style="height: 300px; background: linear-gradient(135deg, #f0f0f0, #e0e0e0); display: flex; align-items: center; justify-content: center; color: #666;"><i class="fas fa-image" style="font-size: 48px;"></i></div>';
+            });
+        });
+    </script>
+</body>
+
+</html>
