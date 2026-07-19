@@ -16,6 +16,14 @@
   <title>Anirudh Raghavan - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -38,11 +46,17 @@
       </ul>
 
 
-      <button class="hamburger-btn" id="hamburger-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+
+        <button class="hamburger-btn" id="hamburger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -624,6 +638,23 @@
         const overlay = document.getElementById('mobile-overlay');
         const navLinks = document.querySelectorAll('.nav-link');
         const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function updateThemeIcon() {
+          const current = document.documentElement.getAttribute('data-theme');
+          themeIcon.className = current === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', function () {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateThemeIcon();
+        });
 
 
         function toggleMobileMenu() {
