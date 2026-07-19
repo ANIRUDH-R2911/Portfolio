@@ -244,6 +244,20 @@ body.no-scroll {
   margin-bottom: 10px;
 }
 
+.status-badge {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 8px 20px;
+  border: 2px solid #4ade8a;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #4ade8a;
+  text-shadow: none;
+}
+
 .home-buttons {
   text-align: center;
   display: flex;
@@ -840,6 +854,12 @@ body.no-scroll {
   .image-container img {
     width: 200px;
     height: 200px;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+    letter-spacing: 0.2px;
   }
 }
 
