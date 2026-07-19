@@ -13,7 +13,7 @@ html {
   --bg-page: #000000;
   --bg-section: #ffffff;
   --bg-section-alt: #f3f4f6;
-  --bg-hero: #f3f4f6;
+  --bg-hero: #ffffff;
   --bg-card: #ffffff;
   --bg-nav: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   --bg-mobile-menu: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
@@ -130,7 +130,6 @@ body.no-scroll {
   list-style: none;
   gap: 10px;
   align-items: center;
-  margin-left: 30px;
 }
 
 .nav-link {
@@ -328,7 +327,7 @@ body.no-scroll {
 }
 
 .hero-text-col {
-  text-align: center;
+  text-align: left;
   max-width: 900px;
 }
 
