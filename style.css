@@ -10,7 +10,7 @@ html {
 
 /* ===== Theme Variables ===== */
 :root {
-  --bg-page: #ffffff;
+  --bg-page: #000000;
   --bg-section: #ffffff;
   --bg-section-alt: #f3f4f6;
   --bg-hero: #ffffff;
@@ -33,7 +33,7 @@ html {
   --status-badge-color: #4ade8a;
   --status-badge-bg: #111111;
   --status-badge-border: #111111;
-  --photo-border-color: #111111;
+  --photo-border-color: #1a9e5c;
 
   --accent: #4a90e2;
   --accent-2: #7b68ee;
@@ -66,7 +66,7 @@ html[data-theme="dark"] {
   --status-badge-color: #4ade8a;
   --status-badge-bg: rgba(255, 255, 255, 0.06);
   --status-badge-border: #4ade8a;
-  --photo-border-color: #f0f0f0;
+  --photo-border-color: #4ade8a;
 
   --accent: #6ba6ea;
   --accent-2: #9285f2;
@@ -149,6 +149,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 24px;
 }
 
 /* Theme Toggle */
@@ -286,7 +287,7 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   gap: 60px;
-  max-width: 1100px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 0 20px;
   flex-wrap: wrap;
@@ -310,7 +311,7 @@ body.no-scroll {
 
 .hero-text-col {
   text-align: left;
-  max-width: 560px;
+  max-width: 640px;
 }
 
 .home-content h1 {
