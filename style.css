@@ -13,7 +13,7 @@ html {
   --bg-page: #000000;
   --bg-section: #ffffff;
   --bg-section-alt: #f3f4f6;
-  --bg-hero: #ffffff;
+  --bg-hero: #f3f4f6;
   --bg-card: #ffffff;
   --bg-nav: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   --bg-mobile-menu: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
@@ -317,6 +317,7 @@ body.no-scroll {
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
+  margin-left: 70px;
 }
 
 .profile-img {
@@ -1003,6 +1004,10 @@ body.no-scroll {
   .profile-img {
     width: 150px;
     height: 150px;
+  }
+
+  .hero-photo-col {
+    margin-left: 0;
   }
 }
 
