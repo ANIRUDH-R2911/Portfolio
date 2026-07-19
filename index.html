@@ -592,38 +592,75 @@
       <section id="contact" class="section contact-section">
         <div class="section-header">
           <h2>Get In Touch</h2>
-          <p>Let’s connect to discuss opportunities in Computer Vision, Robotics, Machine Learning, and Autonomous
+          <p>Let's connect to discuss opportunities in Computer Vision, Robotics, Machine Learning, and Autonomous
             Systems
-          </p><br>
+          </p>
+        </div>
 
-          <div class="home-buttons">
-            <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">
-              <i class="fas fa-download"></i> Resume
-            </a>
-            <div class="social-icons">
-              <a href="https://www.linkedin.com/in/anirudhraghavan29/" class="linkedin" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
+        <div class="contact-grid">
+
+          <!-- Left column: existing contact info -->
+          <div class="contact-info-col">
+            <div class="home-buttons">
+              <a class="resume-button" href="Anirudh_Raghavan_Resume.pdf" target="_blank">
+                <i class="fas fa-download"></i> Resume
               </a>
-              <a href="https://github.com/ANIRUDH-R2911" class="github" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="mailto:raghav22@purdue.edu" class="email" title="University Email">
-                <i class="fas fa-university"></i>
-              </a>
-              <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Personal Email">
-                <i class="fas fa-envelope"></i>
-              </a>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/anirudhraghavan29/" class="linkedin" title="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ANIRUDH-R2911" class="github" title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:raghav22@purdue.edu" class="email" title="University Email">
+                  <i class="fas fa-university"></i>
+                </a>
+                <a href="mailto:anirudhraghavan2002@gmail.com" class="email" title="Personal Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
             </div>
-          </div><br><br>
 
-          <p><strong>Quick Info:</strong></p>
-          <ul style="list-style-type: none;">
-            <li>Immediately available for full-time opportunities</li>
-            <li>OPT eligible (F-1 visa)</li>
-            <li>Open to remote roles and willing to relocate</li>
-            <li>Typically responds to inquiries within 24 – 48 hours</li>
-          </ul>
+            <div class="contact-quick-info">
+              <p><strong>Quick Info:</strong></p>
+              <ul style="list-style-type: none;">
+                <li>Immediately available for full-time opportunities</li>
+                <li>OPT eligible (F-1 visa)</li>
+                <li>Open to remote roles and willing to relocate</li>
+                <li>Typically responds to inquiries within 24 – 48 hours</li>
+              </ul>
+            </div>
+          </div>
 
+          <!-- Right column: DATA_ENVELOPE style contact form -->
+          <div class="contact-form-col">
+            <form class="signal-form" id="signal-form">
+              <p class="signal-title">// DATA_ENVELOPE</p>
+
+              <div class="signal-field">
+                <label for="sf-name">Your Name</label>
+                <input type="text" id="sf-name" name="name" placeholder="Your Name" required>
+              </div>
+
+              <div class="signal-field">
+                <label for="sf-email">Your Email</label>
+                <input type="email" id="sf-email" name="email" placeholder="name@domain.com" required>
+              </div>
+
+              <div class="signal-field">
+                <label for="sf-subject">Subject</label>
+                <input type="text" id="sf-subject" name="subject" placeholder="One-line subject" required>
+              </div>
+
+              <div class="signal-field">
+                <label for="sf-message">Message</label>
+                <textarea id="sf-message" name="message" placeholder="Type message contents here..." rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="transmit-btn" id="transmit-btn">Send</button>
+              <p class="signal-status" id="signal-status"></p>
+            </form>
+          </div>
 
         </div>
 
@@ -728,6 +765,56 @@
             document.body.style.transition = 'opacity 0.5s ease-in-out';
             document.body.style.opacity = '1';
           }, 100);
+        });
+
+        const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdaqgprz";
+
+        const signalForm = document.getElementById('signal-form');
+        const signalStatus = document.getElementById('signal-status');
+        const transmitBtn = document.getElementById('transmit-btn');
+
+        signalForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('sf-name').value.trim();
+          const email = document.getElementById('sf-email').value.trim();
+          const subject = document.getElementById('sf-subject').value.trim();
+          const message = document.getElementById('sf-message').value.trim();
+
+          signalStatus.textContent = '';
+          signalStatus.className = 'signal-status';
+
+          if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+            signalStatus.textContent = 'Form endpoint not configured yet.';
+            signalStatus.classList.add('error');
+            return;
+          }
+
+          transmitBtn.disabled = true;
+          transmitBtn.textContent = 'Sending...';
+
+          try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(signalForm)
+            });
+
+            if (response.ok) {
+              signalStatus.textContent = 'Email sent. Thanks for reaching out!';
+              signalStatus.classList.add('success');
+              signalForm.reset();
+            } else {
+              signalStatus.textContent = 'Transmission failed. Please try again or email directly.';
+              signalStatus.classList.add('error');
+            }
+          } catch (err) {
+            signalStatus.textContent = 'Network error. Please try again or email directly.';
+            signalStatus.classList.add('error');
+          } finally {
+            transmitBtn.disabled = false;
+            transmitBtn.textContent = 'Send';
+          }
         });
       </script>
 </body>

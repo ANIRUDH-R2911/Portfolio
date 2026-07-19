@@ -897,6 +897,169 @@ body.no-scroll {
   color: #e8f4fd;
 }
 
+/* ===== Contact Grid Layout ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-info-col .home-buttons {
+  margin-bottom: 0;
+}
+
+.contact-quick-info {
+  margin-top: 10px;
+}
+
+.contact-quick-info p {
+  margin-bottom: 10px;
+}
+
+.contact-quick-info ul {
+  list-style-type: none;
+}
+
+.contact-quick-info ul li {
+  color: #e8f4fd;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ===== Signal / Data Envelope Form ===== */
+.contact-form-col {
+  width: 100%;
+}
+
+.signal-form {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  width: 100%;
+}
+
+.signal-title {
+  font-family: "Courier New", Courier, monospace;
+  color: #e5484d;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+
+.signal-field {
+  margin-bottom: 22px;
+}
+
+.signal-field label {
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  color: #d8d8d8;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.signal-field input,
+.signal-field textarea {
+  width: 100%;
+  background: #f3f2ee;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  color: #111111;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.signal-field input::placeholder,
+.signal-field textarea::placeholder {
+  color: #9a9a9a;
+}
+
+.signal-field input:focus,
+.signal-field textarea:focus {
+  outline: none;
+  border-color: #e5484d;
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.2);
+}
+
+.signal-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.transmit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #b91c1c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 6px;
+}
+
+.transmit-btn:hover {
+  background: #941414;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(185, 28, 28, 0.4);
+}
+
+.transmit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.signal-status {
+  margin-top: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.signal-status.success {
+  color: #4ade8a;
+}
+
+.signal-status.error {
+  color: #f87171;
+}
+
+/* Stack contact grid to a single scrollable column on tablet/mobile */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .signal-form {
+    padding: 24px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hamburger-btn {
