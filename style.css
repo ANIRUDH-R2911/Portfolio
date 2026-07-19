@@ -110,10 +110,15 @@ body.no-scroll {
   height: 70px;
 }
 
+.nav-brand {
+  flex-shrink: 0;
+}
+
 .nav-brand h1 {
   color: white;
   font-size: 24px;
   font-weight: 700;
+  white-space: nowrap;
   background: linear-gradient(60deg, #ffffff, #a8d3f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -149,7 +154,8 @@ body.no-scroll {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 24px;
+  margin-left: 14px;
+  flex-shrink: 0;
 }
 
 /* Theme Toggle */
@@ -171,6 +177,17 @@ body.no-scroll {
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .nav-link {
+    padding: 10px 10px;
+    font-size: 15px;
+  }
+
+  .nav-menu {
+    gap: 4px;
+  }
 }
 
 /* Hamburger Menu */
@@ -285,7 +302,7 @@ body.no-scroll {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 60px;
   max-width: 1260px;
   margin: 0 auto;
@@ -311,7 +328,11 @@ body.no-scroll {
 
 .hero-text-col {
   text-align: left;
-  max-width: 640px;
+  max-width: 900px;
+}
+
+.hero-text-col .tagline {
+  text-align: center;
 }
 
 .home-content h1 {
@@ -377,7 +398,7 @@ body.no-scroll {
 }
 
 .hero-text-col .home-buttons {
-  align-items: flex-start;
+  align-items: center;
   margin-top: 24px;
 }
 
@@ -963,6 +984,7 @@ body.no-scroll {
 
   .home-content {
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     gap: 24px;
     padding-top: 20px;
