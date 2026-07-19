@@ -28,11 +28,12 @@ html {
   --heading-color: #1f3189;
 
   --hero-text: #111111;
-  --hero-name-grad-1: #1f9e5c;
-  --hero-name-grad-2: #1f6fbf;
-  --status-badge-color: #1a9e5c;
-  --status-badge-bg: rgba(0, 0, 0, 0.05);
-  --status-badge-border: #1a9e5c;
+  --hero-name-grad-1: #0d0d0d;
+  --hero-name-grad-2: #3f3f3f;
+  --status-badge-color: #4ade8a;
+  --status-badge-bg: #111111;
+  --status-badge-border: #111111;
+  --photo-border-color: #111111;
 
   --accent: #4a90e2;
   --accent-2: #7b68ee;
@@ -60,11 +61,12 @@ html[data-theme="dark"] {
   --heading-color: #8ab4f8;
 
   --hero-text: #f0f0f0;
-  --hero-name-grad-1: #4ade8a;
-  --hero-name-grad-2: #38bdf8;
+  --hero-name-grad-1: #ffffff;
+  --hero-name-grad-2: #c9c9c9;
   --status-badge-color: #4ade8a;
-  --status-badge-bg: rgba(255, 255, 255, 0.05);
+  --status-badge-bg: rgba(255, 255, 255, 0.06);
   --status-badge-border: #4ade8a;
+  --photo-border-color: #f0f0f0;
 
   --accent: #6ba6ea;
   --accent-2: #9285f2;
@@ -303,7 +305,7 @@ body.no-scroll {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--status-badge-border);
+  border: 3px solid var(--photo-border-color);
 }
 
 .hero-text-col {
