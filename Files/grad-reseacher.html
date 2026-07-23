@@ -2,6 +2,24 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJWLE4VV1K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KJWLE4VV1K');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grad Research - Anirudh Raghavan</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../project-style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graduate Researcher – Anirudh Raghavan</title>
@@ -589,7 +607,8 @@
             <h2>What Was This Work About?</h2>
             <p>Autonomous driving stacks depend on object detectors to reliably identify vehicles and pedestrians in
                 real time. But how do modern standalone YOLO models actually compare against the detector already
-                embedded inside a production-grade framework like Autoware? That question which seems simple in theory, but messy in
+                embedded inside a production-grade framework like Autoware? That question which seems simple in theory,
+                but messy in
                 practice was the core problem this research set out to answer.</p>
             <div class="highlight-card">
                 <p>A Python-based benchmarking framework was built from scratch to fairly evaluate four YOLO-based
@@ -771,7 +790,8 @@
                 Pre-trained models that work well on COCO struggle on driving-specific imagery because the visual
                 patterns are fundamentally different. Building the entire pipeline from annotation conversion to ROS2
                 integration taught me how much friction lies between "a model that works in a notebook" and "a model
-                that works in a system." The benchmarking framework itself is the contribution and not just the final mAP.
+                that works in a system." The benchmarking framework itself is the contribution and not just the final
+                mAP.
             </p>
         </div>
 
