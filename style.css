@@ -484,6 +484,53 @@ body.no-scroll {
 /* About Section */
 .about-section {
   background: var(--bg-section);
+  min-height: auto;
+  padding: 100px 20px;
+}
+
+.about-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-stats {
+  max-width: 900px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.about-stat-box {
+  background: var(--bg-section-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.about-stat-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 6px;
+}
+
+.about-stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Education Section */
