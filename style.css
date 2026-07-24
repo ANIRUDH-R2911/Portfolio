@@ -40,7 +40,7 @@ html {
   --border-color: #e0e0e0;
 
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --hero-grid-dot: rgba(17, 17, 17, 0.08);
+  --hero-grid-dot: rgba(17, 17, 17, 0.12);
 }
 
 html[data-theme="dark"] {
