@@ -289,12 +289,15 @@
           <span class="experience-date">Aug 2025 – Dec 2025</span>
         </div>
         <ul class="experience-bullets">
-          <li>Architected a Python benchmarking framework evaluating YOLOv8, YOLOv9, YOLO12 and Autoware YOLOX by
-            converting Waymo
-            Open Dataset 3D labels into standardized 2D bounding boxes with a unified training pipeline.</li>
-          <li>Fine-tuned YOLOv8 to 65% mAP@0.5 overall and 85% mAP@0.5 with 86.8% recall on pedestrians, more than
-            doubling
-            Autoware's YOLOX baseline of 39% mAP@0.5 on the safety-critical Person category.</li>
+          <li>Built a Python-based benchmarking framework from scratch to fairly compare four object detectors (YOLOv8,
+            YOLOv9, YOLO12, and Autoware's production YOLOX) on an identical 1,900-image Waymo validation set under
+            standardized metrics</li>
+          <li>Achieved 0.65 mAP@50 with a fine-tuned YOLOv8, a 20% improvement over Autoware's built-in YOLOX detector
+            across all object classes</li>
+          <li>Nearly doubled pedestrian detection performance versus Autoware's production stack, reaching 0.85 mAP@50
+            and 0.86 recall on the Person class (vs. 0.39 mAP@50 and 0.52 recall for Autoware's YOLOX)</li>
+          <li>Converted 10,000 Waymo 3D-labeled frames into a clean 2D YOLO-format training set (8,000 train / 1,900
+            validation), building the full annotation-to-evaluation pipeline end to end</li>
         </ul>
         <a href="Files/grad-reseacher.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
       </div>
