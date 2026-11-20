@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accessible Food Bank Assistant — an AI-powered food inventory search application built with Gemini, hybrid RAG, ChromaDB, and Streamlit." />
+
+  <title>Accessible Food Bank Assistant – Anirudh Raghavan</title>
+
+  <!-- Portfolio stylesheets -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../project-style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --navy: #1f3189;
+      --blue: #4a90e2;
+      --violet: #7b68ee;
+      --light-bg: #f3f5fa;
+      --white: #fff;
+      --text-dark: #1a1a2e;
+      --text-mid: #444b5b;
+      --text-light: #747b8a;
+      --border: #e1e5ee;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #080b16;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        #17266e 0%,
+        #2d4db8 52%,
+        #4a90e2 100%
+      );
+      padding: 140px 20px 76px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse 60% 50% at 18% 65%,
+          rgba(123, 104, 238, .27),
+          transparent 60%
+        ),
+        radial-gradient(
+          ellipse 42% 44% at 82% 25%,
+          rgba(74, 144, 226, .25),
+          transparent 60%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .7;
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, .035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, .035) 1px,
+          transparent 1px
+        );
+
+      background-size: 40px 40px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font: 500 .76rem 'JetBrains Mono', monospace;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .75);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 30px;
+      padding: 7px 17px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font: 400 clamp(2.1rem, 5vw, 3.55rem)/1.16
+        'DM Serif Display', serif;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 em {
+      color: #d9eaff;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .82);
+      font-size: 1.02rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      margin-top: 25px;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, .78);
+      font-size: .86rem;
+    }
+
+    .hero-meta i {
+      color: #b9dcff;
+    }
+
+    /* HERO BUTTONS */
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 23px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      transition:
+        transform .22s,
+        background .22s,
+        box-shadow .22s;
+    }
+
+    .hero-cta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-cta-btn.primary {
+      background: #fff;
+      color: #20378f;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .16);
+    }
+
+    .hero-cta-btn.primary:hover {
+      background: #eaf3ff;
+      box-shadow: 0 9px 24px rgba(0, 0, 0, .2);
+    }
+
+    .hero-cta-btn.secondary {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .55);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .hero-cta-btn.secondary:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    /* METRIC PILLS */
+
+    .metric-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .metric-pill {
+      min-width: 145px;
+      padding: 15px 22px;
+      border-radius: 14px;
+      text-align: center;
+      background: rgba(255, 255, 255, .11);
+      border: 1px solid rgba(255, 255, 255, .22);
+      backdrop-filter: blur(8px);
+      transition: transform .25s, background .25s;
+    }
+
+    .metric-pill:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, .17);
+    }
+
+    .metric-pill .val {
+      display: block;
+      color: #fff;
+      font: 400 1.9rem/1.15 'DM Serif Display', serif;
+    }
+
+    .metric-pill .lbl {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, .7);
+      font-size: .68rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    /* PAGE BODY */
+
+    .page-body {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 68px 26px 86px;
+      background: #fff;
+    }
+
+    .block {
+      margin-bottom: 52px;
+    }
+
+    .block-label {
+      color: var(--blue);
+      font: 500 .72rem 'JetBrains Mono', monospace;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .block h2 {
+      color: var(--navy);
+      font: 400 1.8rem/1.25 'DM Serif Display', serif;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .block p {
+      color: var(--text-mid);
+      font-size: .96rem;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    /* HIGHLIGHT CARD */
+
+    .highlight-card {
+      background: linear-gradient(135deg, #f0f4ff, #e8f4fd);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 23px 27px;
+      margin: 23px 0;
+    }
+
+    .highlight-card p {
+      color: #2d3a6b;
+      margin: 0;
+    }
+
+    /* TWO COLUMN GRID */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 22px 0;
+    }
+
+    .info-card {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 22px 23px;
+    }
+
+    .info-card h3 {
+      color: var(--blue);
+      font: 500 .78rem 'JetBrains Mono', monospace;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .info-card ul {
+      list-style: none;
+    }
+
+    .info-card li {
+      color: var(--text-mid);
+      font-size: .9rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, .055);
+    }
+
+    .info-card li:last-child {
+      border: 0;
+    }
+
+    .info-card li::before {
+      content: "→";
+      color: var(--blue);
+      margin-right: 9px;
+    }
+
+    /* TECH STACK */
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 24px;
+      font: 500 .78rem 'JetBrains Mono', monospace;
+      box-shadow: 0 2px 9px rgba(74, 144, 226, .2);
+    }
+
+    /* PIPELINE */
+
+    .pipeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 22px 0;
+    }
+
+    .pipeline::before {
+      content: "";
+      position: absolute;
+      left: 21px;
+      top: 23px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(var(--blue), var(--violet));
+    }
+
+    .pipe-step {
+      display: flex;
+      gap: 18px;
+      padding: 14px 0;
+      position: relative;
+    }
+
+    .pipe-num {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      flex: 0 0 43px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      font: 500 .8rem 'JetBrains Mono', monospace;
+      box-shadow: 0 4px 12px rgba(31, 49, 137, .2);
+      z-index: 1;
+    }
+
+    .pipe-body h3 {
+      color: var(--navy);
+      font-size: .96rem;
+      margin: 2px 0 4px;
+    }
+
+    .pipe-body p {
+      color: var(--text-light);
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    /* RESULTS TABLE */
+
+    .results-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .07);
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: .88rem;
+    }
+
+    thead {
+      background: linear-gradient(135deg, var(--navy), #2d4db8);
+      color: #fff;
+    }
+
+    th {
+      padding: 13px 15px;
+      text-align: left;
+      font: 500 .72rem 'JetBrains Mono', monospace;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 15px;
+      color: var(--text-mid);
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:hover {
+      background: #f4f7ff;
+    }
+
+    tr.highlight-row {
+      background: linear-gradient(90deg, #f0f4ff, #e8f4fd);
+      font-weight: 600;
+    }
+
+    tr.highlight-row td:first-child {
+      border-left: 3px solid var(--blue);
+    }
+
+    .small-note {
+      color: var(--text-light) !important;
+      font-size: .82rem !important;
+    }
+
+    /* TAKEAWAY */
+
+    .takeaway {
+      background: linear-gradient(135deg, #1f3189, #2d4db8);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px 35px;
+      margin: 48px 0 0;
+    }
+
+    .takeaway h2 {
+      color: #b9dcff;
+      font: 400 1.35rem 'DM Serif Display', serif;
+      margin-bottom: 12px;
+    }
+
+    .takeaway p {
+      color: rgba(255, 255, 255, .84);
+      margin: 0;
+      font-size: .94rem;
+    }
+
+    /* ACTION BUTTONS */
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 52px 0 12px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 25px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: .25s;
+    }
+
+    .back-btn {
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      box-shadow: 0 5px 18px rgba(31, 49, 137, .2);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(74, 144, 226, .3);
+    }
+
+    .secondary-btn {
+      color: var(--navy);
+      border: 1px solid #cbd6ec;
+      background: #fff;
+    }
+
+    .secondary-btn:hover {
+      background: #f0f4ff;
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 680px) {
+      .hero {
+        padding: 118px 18px 58px;
+      }
+
+      .hero-meta {
+        gap: 10px 18px;
+      }
+
+      .page-body {
+        padding: 48px 18px 65px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-pill {
+        min-width: 125px;
+        padding: 12px 15px;
+      }
+
+      .metric-pill .val {
+        font-size: 1.6rem;
+      }
+
+      .takeaway {
+        padding: 26px 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <div class="nav-brand">
+        <h1>Anirudh Raghavan</h1>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+        <li><a href="../index.html#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="../index.html#publications" class="nav-link">Publications</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <span class="hero-label">
+        Volunteer AI Project · ChiEAC Data Science Alliance
+      </span>
+
+      <h1>
+        Accessible <em>Food Bank Assistant</em><br>
+        AI-Powered Inventory Search
+      </h1>
+
+      <p class="hero-subtitle">
+        A deployed AI application that helps food bank volunteers discover
+        donated food inventory through natural-language queries, with
+        nutrition- and allergen-aware retrieval.
+      </p>
+
+      <div class="hero-meta">
+        <span>
+          <i class="fas fa-hand-holding-heart"></i>
+          Nonprofit / Community Impact
+        </span>
+
+        <span>
+          <i class="fas fa-code"></i>
+          Python · Generative AI · RAG
+        </span>
+
+        <span>
+          <i class="fas fa-globe"></i>
+          Streamlit Deployment
+        </span>
+      </div>
+
+      <!-- TOP PROJECT LINKS -->
+
+      <div class="hero-cta">
+
+        <a
+          class="hero-cta-btn primary"
+          href="https://foodbankassistant.streamlit.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fas fa-external-link-alt"></i>
+          Launch Live Demo
+        </a>
+
+        <a
+          class="hero-cta-btn secondary"
+          href="https://github.com/ANIRUDH-R2911/accessible-food-bank-assistant"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github"></i>
+          View Source Code
+        </a>
+
+      </div>
+
+      <!-- KEY METRICS -->
+
+      <div class="metric-row">
+
+        <div class="metric-pill">
+          <span class="val">0.9723</span>
+          <span class="lbl">Retrieval nDCG@5</span>
+        </div>
+
+        <div class="metric-pill">
+          <span class="val">0.9600</span>
+          <span class="lbl">Precision@5</span>
+        </div>
+
+        <div class="metric-pill">
+          <span class="val">1.0000</span>
+          <span class="lbl">MRR@5</span>
+        </div>
+
+        <div class="metric-pill">
+          <span class="val">0.7950</span>
+          <span class="lbl">Ingredient F1 · Gemini 3.5</span>
+        </div>
+
+        <div class="metric-pill">
+          <span class="val">0.7527</span>
+          <span class="lbl">Allergen Detection F1</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+
+  <main class="page-body">
+
+    <!-- OVERVIEW -->
+
+    <section class="block">
+
+      <p class="block-label">01 · Overview</p>
+
+      <h2>Making Food Inventory Easier to Search</h2>
+
+      <p>
+        Food bank inventory can contain a wide range of donated products,
+        ingredients, allergens, and nutrition information. Finding suitable
+        items by manually checking individual records can be time-consuming
+        for volunteers.
+      </p>
+
+      <div class="highlight-card">
+        <p>
+          The Accessible Food Bank Assistant turns structured food inventory
+          into a searchable knowledge base. Volunteers can ask questions in
+          natural language such as finding foods containing soy or identifying
+          high-protein options—and receive results grounded in the available
+          inventory data.
+        </p>
+      </div>
+
+      <p>
+        The application combines Gemini-based information extraction,
+        hybrid retrieval, and constraint-aware filtering in a read-only
+        Streamlit interface. The public demo is designed to support search
+        without allowing user interactions to modify the persistent inventory.
+      </p>
+
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+
+    <section class="block">
+
+      <p class="block-label">02 · Technology</p>
+
+      <h2>Tools & Technologies</h2>
+
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Google Gemini</span>
+        <span class="tech-tag">Generative AI</span>
+        <span class="tech-tag">RAG</span>
+        <span class="tech-tag">ChromaDB</span>
+        <span class="tech-tag">Sentence Transformers</span>
+        <span class="tech-tag">BM25</span>
+        <span class="tech-tag">Reciprocal Rank Fusion</span>
+        <span class="tech-tag">Streamlit</span>
+        <span class="tech-tag">Pytest</span>
+        <span class="tech-tag">Numpy</span>
+      </div>
+
+    </section>
+
+    <!-- ARCHITECTURE -->
+
+    <section class="block">
+
+      <p class="block-label">03 · Architecture</p>
+
+      <h2>How the Application Works</h2>
+
+      <div class="two-col">
+
+        <div class="info-card">
+
+          <h3>AI & Data Layer</h3>
+
+          <ul>
+            <li>Gemini-powered structured food information extraction</li>
+            <li>Schema validation and ingredient / allergen normalization</li>
+            <li>Inventory records stored in a structured JSON dataset</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Retrieval & Application Layer</h3>
+
+          <ul>
+            <li>BM25 keyword retrieval and dense semantic retrieval</li>
+            <li>ChromaDB vector storage with Sentence Transformer embeddings</li>
+            <li>Reciprocal Rank Fusion and constraint-aware filtering</li>
+            <li>Gemini answer generation grounded in retrieved evidence</li>
+            <li>Read-only Streamlit interface for volunteer queries</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- PIPELINE -->
+
+      <div class="pipeline">
+
+        <div class="pipe-step">
+          <div class="pipe-num">01</div>
+          <div class="pipe-body">
+            <h3>Food Data Extraction</h3>
+            <p>
+              Gemini processes food information and extracts structured fields
+              such as ingredients, allergens, and nutrition values.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipe-step">
+          <div class="pipe-num">02</div>
+          <div class="pipe-body">
+            <h3>Validation & Normalization</h3>
+            <p>
+              Extracted records are checked against the inventory schema,
+              with generalized nutrient aliases and normalized ingredient /
+              allergen terms.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipe-step">
+          <div class="pipe-num">03</div>
+          <div class="pipe-body">
+            <h3>Hybrid Indexing</h3>
+            <p>
+              Inventory documents are indexed for BM25 keyword matching and
+              dense semantic retrieval using Sentence Transformer embeddings
+              and ChromaDB.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipe-step">
+          <div class="pipe-num">04</div>
+          <div class="pipe-body">
+            <h3>Query Routing & Filtering</h3>
+            <p>
+              Queries are routed to the appropriate search path. Nutrition,
+              ingredient, and allergen constraints are applied to refine
+              candidate results.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipe-step">
+          <div class="pipe-num">05</div>
+          <div class="pipe-body">
+            <h3>Evidence-Grounded Response</h3>
+            <p>
+              Retrieved inventory evidence is formatted for the volunteer,
+              with Gemini-based natural-language generation available
+              behind a controlled configuration.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipe-step">
+          <div class="pipe-num">06</div>
+          <div class="pipe-body">
+            <h3>Deployment</h3>
+            <p>
+              The Streamlit application exposes a read-only search experience
+              and initializes or reuses the inventory retrieval index.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EVALUATION -->
+
+    <section class="block">
+
+      <p class="block-label">04 · Evaluation</p>
+
+      <h2>Measured Results</h2>
+
+      <p>
+        The system was evaluated across food-label extraction, query routing,
+        and hybrid retrieval quality. The results below include ranking quality,
+        top-five precision and recall, reciprocal rank, and extraction performance.
+      </p>
+
+      <div class="results-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Metric</th>
+              <th>Result</th>
+              <th>What It Measures</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr class="highlight-row">
+              <td>Hybrid Retrieval</td>
+              <td>nDCG@5</td>
+              <td>0.9723</td>
+              <td>Quality of top-five result ranking</td>
+            </tr>
+
+            <tr>
+              <td>Hybrid Retrieval</td>
+              <td>Precision@5</td>
+              <td>0.9600</td>
+              <td>Relevance of the top-five retrieved results</td>
+            </tr>
+
+            <tr>
+              <td>Hybrid Retrieval</td>
+              <td>Recall@5</td>
+              <td>0.5073</td>
+              <td>Relevant inventory items retrieved in the top five</td>
+            </tr>
+
+            <tr>
+              <td>Hybrid Retrieval</td>
+              <td>MRR@5</td>
+              <td>1.0000</td>
+              <td>Rank of the first relevant result</td>
+            </tr>
+
+            <tr>
+              <td>Gemini 3.5 Flash Lite</td>
+              <td>Ingredient Extraction F1</td>
+              <td>0.7950</td>
+              <td>Ingredient extraction precision / recall balance</td>
+            </tr>
+
+            <tr>
+              <td>Gemini 3.5 Flash Lite</td>
+              <td>Allergen Detection F1</td>
+              <td>0.7527</td>
+              <td>Allergen detection precision / recall balance</td>
+            </tr>
+
+            <tr>
+              <td>Gemini 3.6 Flash · Model comparison</td>
+              <td>Ingredient Extraction F1</td>
+              <td>0.8404</td>
+              <td>Ingredient extraction result from the comparison model</td>
+            </tr>
+
+            <tr>
+              <td>Query Router</td>
+              <td>Accuracy</td>
+              <td>100%</td>
+              <td>Correct routing across evaluated query categories</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p class="small-note">
+        Model attribution: Gemini 3.5 Flash Lite is the primary extraction
+        model. The 0.8404 ingredient extraction F1 result belongs to
+        Gemini 3.6 Flash and is included only as a model-comparison result.
+        Metrics reflect the current evaluation datasets and relevance
+        judgments; results may change as the inventory and evaluation set evolve.
+      </p>
+
+    </section>
+
+    <!-- RELIABILITY -->
+
+    <section class="block">
+
+      <p class="block-label">05 · Reliability</p>
+
+      <h2>Designed for a Safe Public Demo</h2>
+
+      <div class="two-col">
+
+        <div class="info-card">
+
+          <h3>Usage Controls</h3>
+
+          <ul>
+            <li>Session-level query limit</li>
+            <li>Daily Gemini generation budget</li>
+            <li>Generation disabled by default</li>
+            <li>Bounded generation timeout</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>Data Protection</h3>
+
+          <ul>
+            <li>Read-only public inventory experience</li>
+            <li>No user-upload workflow in the public demo</li>
+            <li>Persistent inventory protected from UI changes</li>
+            <li>Existing vector index reused when available</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TAKEAWAY -->
+
+    <section class="takeaway">
+
+      <h2>What This Project Demonstrates</h2>
+
+      <p>
+        This project brought together Generative AI, information retrieval,
+        structured data processing, and application deployment to address
+        a practical nonprofit workflow. Beyond integrating an LLM, the work
+        involved evaluating retrieval quality, implementing domain-specific
+        constraints, and adding operational safeguards for a public-facing
+        application.
+      </p>
+
+    </section>
+
+    <!-- BOTTOM LINKS -->
+
+    <div class="action-buttons">
+
+      <a href="../index.html#projects" class="action-btn back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Projects
+      </a>
+
+      <a
+        href="https://github.com/ANIRUDH-R2911/accessible-food-bank-assistant"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="action-btn secondary-btn"
+      >
+        <i class="fab fa-github"></i>
+        GitHub Repository
+      </a>
+
+      <a
+        href="https://foodbankassistant.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="action-btn secondary-btn"
+      >
+        <i class="fas fa-external-link-alt"></i>
+        Live Demo
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- MOBILE NAVIGATION SCRIPT -->
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('mobile-overlay');
+    const body = document.body;
+
+    function closeMobileMenu() {
+      navMenu.classList.remove('nav-menu-open');
+      hamburgerBtn.classList.remove('hamburger-active');
+      overlay.classList.remove('overlay-active');
+      body.classList.remove('no-scroll');
+    }
+
+    hamburgerBtn?.addEventListener('click', () => {
+      navMenu.classList.toggle('nav-menu-open');
+      hamburgerBtn.classList.toggle('hamburger-active');
+      overlay.classList.toggle('overlay-active');
+      body.classList.toggle('no-scroll');
+    });
+
+    overlay?.addEventListener('click', closeMobileMenu);
+
+    navMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  </script>
+
+</body>
+</html>
